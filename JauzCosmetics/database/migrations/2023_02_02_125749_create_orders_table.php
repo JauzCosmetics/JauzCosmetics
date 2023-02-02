@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password'); 
-            $table->enum('rol',['admin','user']);
-            $table->foreignId('cart_id')->references('id')->on('cart');
-            $table->rememberToken();
+            $table->double('total_price');
+            $table->enum('pago',['Credit card', 'Bizum', 'PayPal']);
+            $table->foreignId('address_id')->references('id')->on('address');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('orders');
     }
 };

@@ -1,6 +1,19 @@
-@yield('head')
-@yield('nav')
-@yield('carrousel')
-@yield('product')
-@yield('category')
-@yield('footer')
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    @yield('head')
+<body>
+    @yield('nav')
+    @yield('modal')
+    @yield('carrousel')
+    @yield('category')
+    @yield('product')
+    @yield('article')
+    @yield('contact')
+    @yield('about')
+    @yield('footer')
+</body>
+</html>
