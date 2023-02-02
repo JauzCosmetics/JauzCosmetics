@@ -1,0 +1,6 @@
+@yield('head')
+@yield('nav')
+@yield('carrousel')
+@yield('product')
+@yield('category')
+@yield('footer')
