@@ -5,5 +5,5 @@
 @endsection
 
 @section('footer')
-<footer>aqui va el footer</footer>
+<footer>aqui va el footer fdfsdfsdff</footer>
 @endsection
