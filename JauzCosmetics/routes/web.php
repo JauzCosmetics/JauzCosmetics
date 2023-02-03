@@ -34,6 +34,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+
 Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){
     Route::get('admin', [ AdminController::class, 'admin' ]);
     Route::get('admin.detalle/{id?}', [ AdminController::class, 'detalle' ]) -> name('admin.detalle');
