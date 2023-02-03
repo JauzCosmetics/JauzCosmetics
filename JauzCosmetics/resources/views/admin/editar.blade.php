@@ -1,6 +1,7 @@
 @extends('template')
 
-<h2>Editando la nota {{ $product -> id }}</h2> 
+@section ('editar')
+<h2>Editando el producto {{ $product -> id }}</h2> 
 
 @if (session('mensaje')) 
     <div class="alert alert-success">{{ session('mensaje')}}</div> 
@@ -22,3 +23,4 @@
     <input type="text" name="description" placeholder="Descripción de la nota" class="form-control mb-2" value="{{ $product -> description }}" > 
     <button class="btn btn-primary btn-block" type="submit">Guardar cambios</button> 
 </form>
+@endsection
