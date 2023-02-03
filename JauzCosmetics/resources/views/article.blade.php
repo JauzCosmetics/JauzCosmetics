@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" style="width: 526px; height: 526px;" src="assets/img/accesorios/articulo2.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" style="width: 526px; height: 526px;" src="assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -28,17 +28,17 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo1.jpg" alt="Product Image 1">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko1.jpg" alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo3.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko2.jpg" alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo4.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko3.jpg" alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -50,17 +50,17 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo5.jpg" alt="Product Image 4">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/maiko4.jpg" alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo6.jpg" alt="Product Image 5">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/maiko5.jpg" alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/articulo7.jpg" alt="Product Image 6">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/accesorios/maiko6.jpg" alt="Product Image 6">
                                             </a>
                                         </div>
                                     </div>
