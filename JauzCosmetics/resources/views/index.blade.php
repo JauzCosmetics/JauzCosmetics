@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3 card-body">
                 <div class="card" style="width: 20rem;">
-                    <img src="./assets/img/accesorios/articulo1.jpg" class="card-img-top" alt="...">
+                    <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="text-center mt-3 mb-3">Maquillaje</h5>
                         <p class="card-text"> contentsdasdsdsadasdsadsadsad.</p>
