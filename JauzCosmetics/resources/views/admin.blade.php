@@ -9,7 +9,7 @@
 <th>Descripción</th>
 </tr>
 </thead>
-@foreach ($product as $products)
+@foreach ($products as $product)
 <tr>
 <td>{{$product -> nombre}}</td>
 <td>{{$product -> description}}</td>
