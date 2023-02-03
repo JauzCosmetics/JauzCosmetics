@@ -49,7 +49,7 @@
                             <a class="nav-link fw-bolder" href="shop.html">accesorios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="/contact">Contacto</a>
+                            <a class="nav-link fw-bolder" href="{{route('contact')}}">Contacto</a>
                         </li>
                     </ul>
                 </div>
