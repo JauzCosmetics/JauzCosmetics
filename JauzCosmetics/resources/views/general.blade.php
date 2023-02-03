@@ -9,6 +9,7 @@
     @yield('category')
     @yield('product')
     @yield('article')
+    @yield('adminTable')
     @yield('contact')
     @yield('about')
     @yield('footer')
