@@ -51,7 +51,7 @@
     <!--End carousel-->
 @endsection
 
-@section('category')
+@section('novedades')
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
@@ -96,7 +96,7 @@
     </section>
 @endsection
 
-@section('product')
+@section('bestSeller')
     <section class="bg-light">
         <div class="container py-5">
             <div class="row text-center py-3">
