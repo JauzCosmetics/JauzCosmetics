@@ -22,19 +22,18 @@
 @endsection
 
 @section('nav')
-    <nav class="navbar bgpropio navbar-expand-lg shadow sticky-top">
+    <nav class="navbar  bgpropio navbar-expand-lg  navbar-light shadow sticky-top" >
         <div class="container d-flex justify-content-between align-items-center">
 
             <p class="navbar-brand text-white logo h1 align-self-center" href="index.html">
                 Jauz Cosmetics
             </p>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler border-0 bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
                 id="templatemo_main_nav">
                 <div class="flex-fill">
@@ -42,12 +41,16 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bolder" href="index.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="/admin">Maquillaje</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="shop.html">accesorios</a>
-                        </li>
+                        <div class="dropdown ">
+                            <button class="btn bgpropio  nav-link fw-bolder text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Shop
+                            </button>
+                            <ul class="dropdown-menu text-white  bgpropio " aria-labelledby="dropdownMenuButton1">
+                                {{-- nuevas vistas para maquillaje y accesorios cambiar la vista de product--}}
+                              <li><a class="dropdown-item" href="#">Maquillaje</a></li>
+                              <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                            </ul>
+                          </div>
                         <li class="nav-item">
                             <a class="nav-link fw-bolder" href="{{route('contact')}}">Contacto</a>
                         </li>
@@ -169,8 +172,11 @@
                     </div>
                 </div>
             </div>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+            </a>
         </div>
-
     </footer>
 
 @endsection
+
