@@ -43,7 +43,7 @@
                             <a class="nav-link fw-bolder" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="about.html">Maquillaje</a>
+                            <a class="nav-link fw-bolder" href="/admin">Maquillaje</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bolder" href="shop.html">accesorios</a>
