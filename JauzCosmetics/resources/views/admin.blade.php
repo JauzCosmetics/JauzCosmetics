@@ -36,4 +36,4 @@
         </div>
     @endif
     @error('nombre') <div class="alert alert-danger"> No olvides rellenar el nombre </div> @enderror
-    @endsection
+@endsection

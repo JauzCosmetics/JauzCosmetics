@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function products() {
-        $product = Admin::all(); // Nos saca todas los productos de la BBDD
-        return view('admin', @compact('admin'));
+        $products = Admin::all(); // Nos saca todas los productos de la BBDD
+        return view('admin', @compact('products'));
     }
     
     public function detalle($id) {
-        $product = Admin::findOrFail($id);
-        return view('admin', compact('admin'));
+        $products = Admin::findOrFail($id);
+        return view('admin', compact('products'));
     }    
 
     public function crear(Request $request) {
@@ -26,8 +26,8 @@ class AdminController extends Controller
         return back() -> with('mensaje', 'Producto agregado exitosamente');
     }
     public function editar($id) {
-        $product = Admin::findOrFail($id);
-        return view('admin', compact('admin'));
+        $products = Admin::findOrFail($id);
+        return view('admin', compact('products'));
         }
         public function actualizar(Request $request, $id) {
         $request -> validate([
