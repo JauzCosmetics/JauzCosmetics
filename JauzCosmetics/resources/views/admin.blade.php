@@ -21,7 +21,7 @@
 <td>{{$product -> description}}</td>
 <td>{{$product -> fotosProd}}</td>
 <td>{{$product -> category_id}}</td>
-<td><a href="{{{'admin/'.$product->id}}}"><button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button></a></td>
+<td><a href="{{{'admin/detalle'.$product->id}}}"><button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button></a></td>
 <td><a href="{{route('admin.editar',$product)}}"><button class="btn btn-secondary" type="submit"><i class="bi bi-pencil"></i></button></a></td>
 <td><form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="d-inline">
     @method('DELETE')
