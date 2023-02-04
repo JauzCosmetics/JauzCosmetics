@@ -1,18 +1,26 @@
 @extends('template')
 
 @section ('adminTable')
-<h1>Notas desde base de datos</h1>
+<h3>Gestión de los productos, bienvenido administrador.</h3>
 <table class="table">
 <thead>
 <tr>
 <th>Nombre</th>
+<th>Precio</th>
+<th>Stock</th>
 <th>Descripción</th>
+<th>Imagen</th>
+<th>Categoría</th>
 </tr>
 </thead>
 @foreach ($products as $product)
 <tr>
-<td>{{$product -> nombre}}</td>
+<td>{{$product -> name}}</td>
+<td>{{$product -> price}}</td>
+<td>{{$product -> stock}}</td>
 <td>{{$product -> description}}</td>
+<td>{{$product -> fotosProd}}</td>
+<td>{{$product -> category_id}}</td>
 <td><a href="{{{'admin/'.$product->id}}}"><button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button></a></td>
 <td><a href="{{route('admin.editar',$product)}}"><button class="btn btn-secondary" type="submit"><i class="bi bi-pencil"></i></button></a></td>
 <td><form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="d-inline">
