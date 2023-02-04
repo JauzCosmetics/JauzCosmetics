@@ -41,7 +41,7 @@ Route::get('/product', function () {
 
 
 Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){ 
-    Route::get('admin', [ AdminController::class, 'admin' ]); 
+    Route::get('admin', [ AdminController::class, 'productos' ])-> name('admin.productos'); 
     Route::get('admin.detalle/{id?}', [ AdminController::class, 'detalle' ]) -> name('admin.detalle');
     Route::post('admin', [ AdminController::class, 'crear' ]) -> name('admin.crear');
     Route::get('admin.editar/{id}', [ AdminController::class, 'editar' ]) -> name('admin.editar'); 

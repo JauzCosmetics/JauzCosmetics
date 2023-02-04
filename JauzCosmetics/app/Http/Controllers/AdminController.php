@@ -1,24 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Admin;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function products() {
-        $products = Admin::all(); // Nos saca todas los productos de la BBDD
-        return view('admin', @compact('products'));
+    public function productos() {
+        $products = Product::all(); // Nos saca todas los productos de la BBDD
+        return view('admin', compact('products'));
     }
     
     public function detalle($id) {
-        $products = Admin::findOrFail($id);
+        $products = Product::findOrFail($id);
         return view('admin', compact('products'));
     }    
 
     public function crear(Request $request) {
-        $newProduct = new Admin;
+        $newProduct = new Product;
         $newProduct -> nombre = $request -> nombre;
         $newProduct -> description = $request -> description;
         $request -> validate([ 'nombre' => 'required', 'description' => 'required' ]);
@@ -26,7 +25,7 @@ class AdminController extends Controller
         return back() -> with('mensaje', 'Producto agregado exitosamente');
     }
     public function editar($id) {
-        $products = Admin::findOrFail($id);
+        $products = Product::findOrFail($id);
         return view('admin', compact('products'));
         }
         public function actualizar(Request $request, $id) {
@@ -34,7 +33,7 @@ class AdminController extends Controller
         'nombre' => 'required',
         'description' => 'required'
         ]);
-        $updateProduct = Admin::findOrFail($id);
+        $updateProduct = Product::findOrFail($id);
         $updateProduct -> nombre = $request -> nombre;
         $updateProduct -> description = $request -> description;
         $updateProduct -> save();
@@ -42,7 +41,7 @@ class AdminController extends Controller
     }
 
     public function eliminar($id) {
-        $deleteProduct = Admin::findOrFail($id);
+        $deleteProduct = Product::findOrFail($id);
         $deleteProduct -> delete();
         return back() -> with('mensaje', 'Producto eliminado');
     }

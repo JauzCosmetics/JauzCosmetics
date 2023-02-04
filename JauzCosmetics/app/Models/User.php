@@ -15,11 +15,11 @@ class User extends Model
     
     public function cart(){
 
-        return $this->hasOne(Cart::class);
+        return $this->hasOne(Cart::class)->withTimestamps();
     }
 
     public function adress(){
-        return $this->hasMany(Adress::class);
+        return $this->hasMany(Adress::class)->withTimestamps();
     }
     
 }

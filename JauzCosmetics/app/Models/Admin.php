@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
-    public function products()
-    {
-        return $this->hasMany(Product::class);
+    public function products(){
+        return $this->hasMany(Product::class)->withTimestamps();
+    }
+
+    public function users(){
+
+        return $this->hasOne(User::class)->withTimestamps();
     }
 }
