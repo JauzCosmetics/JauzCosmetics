@@ -10,6 +10,10 @@ class Order extends Model
     use HasFactory;
 
     public function addresses(){
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(Address::class)->withTimestamps();
+    }
+    public function cart(){
+
+        return $this->hasOne(Cart::class)->withTimestamps();
     }
 }

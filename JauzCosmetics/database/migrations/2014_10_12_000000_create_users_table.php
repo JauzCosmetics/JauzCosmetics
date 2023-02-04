@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password'); 
             $table->enum('rol',['admin','user']);
-            $table->foreignId('cart_id')->references('id')->on('cart');
             $table->rememberToken();
             $table->timestamps();
         });
