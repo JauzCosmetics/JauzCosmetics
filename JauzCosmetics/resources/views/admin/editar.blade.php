@@ -1,6 +1,7 @@
 @extends('template')
 
 @section ('editar')
+
 <h2>Editando el producto {{ $product -> id }}</h2> 
 
 @if (session('mensaje')) 
