@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -19,8 +20,8 @@ return new class extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->string('description');
-            $table->array('fotosProd');
-            $table->foreignId('category_id')->references('id')->on('category');
+            $table->json('fotosProd')->default(new Expression('(JSON_ARRAY())'));
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
