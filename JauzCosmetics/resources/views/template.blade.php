@@ -4,8 +4,7 @@
     <title>Jauz Cosmetics</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -25,7 +24,7 @@
     <nav class="navbar  bgpropio navbar-expand-lg  navbar-light shadow sticky-top" >
         <div class="container d-flex justify-content-between align-items-center">
 
-            <p class="navbar-brand text-white logo h1 align-self-center" href="index.html">
+            <p class="navbar-brand text-white logo h1 align-self-center">
                 Jauz Cosmetics
             </p>
 
@@ -47,8 +46,8 @@
                             </button>
                             <ul class="dropdown-menu text-white  bgpropio " aria-labelledby="dropdownMenuButton1">
                                 {{-- nuevas vistas para maquillaje y accesorios cambiar la vista de product--}}
-                              <li><a class="dropdown-item" href="#">Maquillaje</a></li>
-                              <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                              <li><a class="dropdown-item" href="{{route('maquillaje')}}">Maquillaje</a></li>
+                              <li><a class="dropdown-item" href="{{route('accesorio')}}">Accesorios</a></li>
                             </ul>
                           </div>
                         <li class="nav-item">
@@ -98,7 +97,7 @@
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 colorPropio border-bottom pb-3 border-light logo">Jauz Shop</h2>
+                    <h2 class="h2 text-white  border-bottom pb-3 border-light logo">Jauz Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
