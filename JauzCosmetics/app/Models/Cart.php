@@ -9,8 +9,14 @@ class Cart extends Model
 {
     use HasFactory;
 
-    public function user(){
+    public function users(){
         
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class)->withTimestamps();
+
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)->withTimestamps();
     }
 }

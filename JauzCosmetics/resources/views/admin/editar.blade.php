@@ -1,6 +1,7 @@
 @extends('template')
 
 @section ('editar')
+
 <h2>Editando el producto {{ $product -> id }}</h2> 
 
 @if (session('mensaje')) 
@@ -11,7 +12,7 @@
     @method('PUT') {{-- Necesitamos cambiar al método PUT para editar --}} 
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}} 
 
-    @error('nombre') 
+    @error('name') 
         <div class="alert alert-danger"> El nombre es obligatorio </div> 
     @enderror 
 
@@ -19,8 +20,8 @@
         <div class="alert alert-danger"> La descripción es obligatoria </div> 
     @enderror 
 
-    <input type="text" name="nombre" class="form-control mb-2" value="{{ $product -> nombre }}" placeholder="Nombre de la nota" autofocus > 
-    <input type="text" name="description" placeholder="Descripción de la nota" class="form-control mb-2" value="{{ $product -> description }}" > 
+    <input type="text" name="name" class="form-control mb-2" value="{{ $product -> name }}" placeholder="Nombre del producto" autofocus > 
+    <input type="text" name="description" placeholder="Descripción del producto" class="form-control mb-2" value="{{ $product -> description }}" > 
     <button class="btn btn-primary btn-block" type="submit">Guardar cambios</button> 
 </form>
 @endsection

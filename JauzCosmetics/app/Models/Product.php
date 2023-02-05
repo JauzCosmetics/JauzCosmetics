@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    public function carts(){
+        return $this->belongsToMany(Cart::class)->withTimestamps();
+    }
+    public function categories(){
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
+        return $this->hasOne(Category::class)->withTimestamps();
     }
 }
