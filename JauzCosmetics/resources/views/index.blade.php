@@ -62,36 +62,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4 p-5 mt-3 card-body">
+            @foreach ($products as $product)
+            {{-- aquí comienza la carta que genera las novedades a falta de mostrar solo los últimos creados(order by id desc)--}}
+            <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
                 <div class="card" style="width: 20rem;">
                     <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="text-center mt-3 mb-3">Maquillaje</h5>
-                        <p class="card-text"> contentsdasdsdsadasdsadsadsad.</p>
-                        <p class="text-center"><a href="/article" class="btn bgpropio text-white">Go Shop</a></p>
+                        <h5 class="mt-3 mb-3">{{$product -> name}}</h5>
+                        <p class="card-text">{{$product -> description}}</p>
+                        <p ><a href="/article" class="btn bgpropio text-white">Ver más</a></p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <div class="card" style="width: 20rem;">
-                    <img src="./assets/img/category_img_02.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="text-center mt-3 mb-3">accesorios</h5>
-                        <p class="card-text"> content.</p>
-                        <p class="text-center"><a href="#" class="btn bgpropio text-white">Go Shop</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <div class="card" style="width: 20rem;">
-                    <img src="./assets/img/category_img_03.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="text-center mt-3 mb-3">Maquillaje</h5>
-                        <p class="card-text"> content.</p>
-                        <p class="text-center"><a href="#" class="btn bgpropio text-white">Go Shop</a></p>
-                    </div>
-                </div>
-            </div>
+            {{-- aquí termina la carta--}}
+            @endforeach
         </div>
     </section>
 @endsection

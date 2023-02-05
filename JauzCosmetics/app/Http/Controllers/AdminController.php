@@ -9,7 +9,7 @@ class AdminController extends Controller
     public function productos() {
         $products = Product::all(); // Nos saca todos los productos de la BBDD
         return view('admin', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-    }   
+    }
 
     public function crear(Request $request) {
         $newProduct = new Product;

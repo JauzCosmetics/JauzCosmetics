@@ -1,7 +1,10 @@
 @extends('template')
 
 @section ('adminTable')
-<h3>Gestión de los productos, bienvenido administrador.</h3>
+<div class="container">
+
+
+<h3 class="text-center pt-5 pb-4">Gestión de los productos, bienvenido administrador.</h3>
 <table class="table">
 <thead>
 <tr>
@@ -35,7 +38,8 @@
 </table>
 
 <form action="{{ route('admin.crear') }}" method="POST">
-    <h3>Crear un nuevo producto
+    <h3 class="text-center pt-4 pb-5">Crear un nuevo producto
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
     <button class="btn btn-primary btn-block" type="submit">Crear</button></h3>
-@endsection
+</div>
+    @endsection
