@@ -33,9 +33,11 @@
 </tr>
 @endforeach
 </table>
-
-<form action="{{ route('admin.crear') }}" method="POST">
+<div class="container-fluid justify-contentcenter">
+    <form action="{{ route('admin.crear') }}" method="POST">
     <h3>Crear un nuevo producto
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
     <button class="btn btn-primary btn-block" type="submit">Crear</button></h3>
+</div>
+
 @endsection

@@ -38,9 +38,9 @@ Route::get('/product', function () {
     return view('product');
 })->name('product');
 
-/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
-Con prefix tomará */
-Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){ 
+/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.*/
+Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){
+    /* La ruta empieza por /admin debido a prefix */ 
     Route::get('',[ AdminController::class, 'productos' ])-> name('admin.productos'); 
     Route::get('.crear', [ AdminController::class, 'crear' ]) -> name('admin.crear');
     Route::get('.editar/{id}', [ AdminController::class, 'editar' ]) -> name('admin.editar'); 
