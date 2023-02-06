@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('crear')
-<form action="{{ route('admin.crear') }}" method="POST">
+<form action="{{ route('admin.guardar') }}" method="POST">
   <h1>Crear una nota nueva</h1>
   @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
   <input type="text" name="name" placeholder="Nombre de la nota" class="form-control mb-2" autofocus>
