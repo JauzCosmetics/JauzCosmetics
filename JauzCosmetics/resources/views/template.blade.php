@@ -118,8 +118,8 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Maquillaje</a></li>
-                        <li><a class="text-decoration-none" href="#">Accesorios</a></li>
+                        <li><a class="text-decoration-none" href="{{route('maquillaje')}}">Maquillaje</a></li>
+                        <li><a class="text-decoration-none"href="{{route('accesorio')}}">Accesorios</a></li>
                     </ul>
                 </div>
 
