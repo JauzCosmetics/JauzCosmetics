@@ -37,8 +37,6 @@
 @endforeach
 </table>
 
-
-
 <a href="{{route('admin.crear')}}"></a>
     <button class="btn btn-primary btn-block" type="submit">Crear</button></h3>
 </div>
