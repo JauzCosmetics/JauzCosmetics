@@ -25,8 +25,8 @@
 <td>{{$product -> price}}</td>
 <td>{{$product -> stock}}</td>
 <td>{{$product -> description}}</td>
+<td>{{$product -> category}}</td>
 <td>{{$product -> fotosProd}}</td>
-<td>{{$product -> category_id}}</td>
 <td><a href="{{route('admin.editar',$product)}}"><button class="btn btn-secondary" type="submit"><i class="bi bi-pencil"></i></button></a></td>
 <td><form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="d-inline">
     @method('DELETE')
@@ -37,9 +37,9 @@
 @endforeach
 </table>
 
-<form action="{{ route('admin.crear') }}" method="POST">
-    <h3 class="text-center pt-4 pb-5">Crear un nuevo producto
-    @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
+
+
+<a href="{{route('admin.crear')}}"></a>
     <button class="btn btn-primary btn-block" type="submit">Crear</button></h3>
 </div>
     @endsection
