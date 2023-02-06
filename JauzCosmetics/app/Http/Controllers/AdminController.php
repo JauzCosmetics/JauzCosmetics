@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -9,6 +10,11 @@ class AdminController extends Controller
     public function productos() {
         $products = Product::all(); // Nos saca todos los productos de la BBDD
         return view('admin', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+    }
+
+    public function usuarios() {
+        $usuers = User::all(); // Nos saca todos los productos de la BBDD
+        return view('admin', compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function crear (){
