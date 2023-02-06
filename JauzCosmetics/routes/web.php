@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article', function () {
     return view('article');
@@ -34,16 +34,18 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/product', function () {
-    return view('product');
-})->name('product');
+Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
+Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 
-/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.*/
-Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){
-    /* La ruta empieza por /admin debido a prefix */ 
-    Route::get('',[ AdminController::class, 'productos' ])-> name('admin.productos'); 
-    Route::get('.crear', [ AdminController::class, 'crear' ]) -> name('admin.crear');
-    Route::get('.editar/{id}', [ AdminController::class, 'editar' ]) -> name('admin.editar'); 
-    Route::put('.editar/{id}', [ AdminController::class, 'actualizar' ]) -> name('admin.actualizar'); 
-    Route::delete('eliminar/{id}', [ AdminController::class, 'eliminar' ]) -> name('admin.eliminar');
-}); 
+/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
+Con prefix tomará */
+
+    Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')->group(function () {
+        Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+        Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
+        Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
+
+        Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
+        Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
+        Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+    });

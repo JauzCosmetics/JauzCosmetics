@@ -85,7 +85,7 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2">Active Wear</h1>
+                            <h1 class="h2">{{$product->name}}</h1>
                             <p class="h3 py-2">$25.00</p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
