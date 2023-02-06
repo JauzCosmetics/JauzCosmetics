@@ -6,29 +6,26 @@ use App\Models\Product;
 class ShopController extends Controller
 {
 
-    public function maquillaje() {
-        $products = Product::all(); // Nos saca todos los productos de la BBDD
-        return view('maquillaje', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-    }
-    public function accesorio() {
-        $products = Product::all(); // Nos saca todos los productos de la BBDD
-        return view('accesorio', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-    }
-
-    public function productos() {
-        $products = Product::all(); // Nos saca todos los productos de la BBDD
-        return view('index', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-    }
-
-    public function paginate()
+    public function maquillaje()
     {
-        $products = Product::paginate(2);
-        return view('maquillaje', @compact('products'));
+        $products = Product::maquillaje(3); // Nos saca todos los productos de la BBDD
+        $category = 'maquillaje';
+        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+    }
+    public function accesorio()
+    {
+        $products = Product::accesorio(1); // Nos saca todos los productos de la BBDD
+        $category = 'accesorio';
+        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
-    public function paginateAcces()
+    public function productos()
     {
-        $products = Product::paginate(2);
-        return view('accesorio', @compact('products'));
+        $products = Product::all();
+        // Nos saca todos los productos de la BBDD
+
+        return view('index', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
+
+
 }
