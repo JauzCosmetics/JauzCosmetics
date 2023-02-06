@@ -49,4 +49,3 @@ Con prefix tomará */
         Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
         Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
     });
-
