@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('description');
             $table->json('fotosProd')->default(new Expression('(JSON_ARRAY())'));
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->enum('category',['maquillaje','accesorio']);
             $table->timestamps();
         });
     }

@@ -48,3 +48,24 @@ Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (fun
     Route::put('.editar/{id}', [ AdminController::class, 'actualizar' ]) -> name('admin.actualizar');
     Route::delete('eliminar/{id}', [ AdminController::class, 'eliminar' ]) -> name('admin.eliminar');
 });
+
+
+Route::get('/', function () {
+    return view('index');
+})->middleware('auth');
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+Route::post('/register',[RegisterController::class,'register']);
+// // Login
+// Route::get('/login', [AuthController::class, 'login'])->name('login');
+// Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
+
+// // Register
+// Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+// Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
+
+// // Logout
+// Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');

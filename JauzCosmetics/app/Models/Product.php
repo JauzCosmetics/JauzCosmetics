@@ -11,8 +11,4 @@ class Product extends Model
     public function carts(){
         return $this->belongsToMany(Cart::class)->withTimestamps();
     }
-    public function categories(){
-
-        return $this->hasOne(Category::class)->withTimestamps();
-    }
 }
