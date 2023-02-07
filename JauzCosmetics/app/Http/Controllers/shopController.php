@@ -27,5 +27,10 @@ class ShopController extends Controller
         return view('index', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
+    public function detalle($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('article', @compact('product')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+    }
 
 }

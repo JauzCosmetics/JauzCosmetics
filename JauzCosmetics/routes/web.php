@@ -19,9 +19,7 @@ use App\Http\Controllers\ShopController;
 
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
-Route::get('/article', function () {
-    return view('article');
-});
+Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
 
 Route::get('/contact', function () {
     return view('contact');
