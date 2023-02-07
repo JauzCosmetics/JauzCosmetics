@@ -19,9 +19,7 @@ use App\Http\Controllers\ShopController;
 
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
-Route::get('/article', function () {
-    return view('article');
-});
+Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -65,6 +63,6 @@ Con prefix tomará */
 
         Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
         Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
-        
+
         Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
     });
