@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{{URL::asset('assets/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/templatemo.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/templatemo.css')}}">
     <script defer src="{{URL::asset('assets/js/jquery-1.11.0.min.js')}}"></script>
     <script defer src="{{URL::asset('assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
     <script defer src="{{URL::asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-    <script defer src="{{URL::asset('assets/js/templatemo.js')}}"></script>
     <script defer src="{{URL::asset('assets/js/custom.js')}}"></script>
+    {{-- <script defer src="{{URL::asset('assets/js/templatemo.js')}}"></script> --}}
     <link rel="stylesheet" href="{{URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')}}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
 @endsection
 
@@ -38,10 +38,10 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="index.php">Home</a>
+                            <a class="nav-link fw-bolder" href="{{route('index')}}">Home</a>
                         </li>
                         <div class="dropdown ">
-                            <button class="btn bgpropio  nav-link fw-bolder text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn bgpropio nav-link fw-bolder text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Shop
                             </button>
                             <ul class="dropdown-menu text-white  bgpropio " aria-labelledby="dropdownMenuButton1">
