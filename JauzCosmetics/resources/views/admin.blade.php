@@ -1,9 +1,8 @@
 @extends('template')
 
 @section('adminTable')
-    <div class="container">
-
-
+<div class="container py-5">
+    <div class="row py-5">
         <h3 class="text-center pt-5 pb-4">Gestión de los productos, bienvenido administrador.</h3>
         <table class="table">
             <thead>
@@ -43,4 +42,6 @@
         <a href="{{ route('admin.crear') }}">
         <button class="btn btn-primary btn-block" type="submit">Crear</button></h3></a>
     </div>
+    <br>
+</div>
 @endsection
