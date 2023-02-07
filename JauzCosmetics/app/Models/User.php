@@ -12,7 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 // class User extends Model
 // {
 //     use HasFactory;
-    
+
 //     public function cart(){
 
 //         return $this->hasOne(Cart::class)->withTimestamps();
@@ -21,47 +21,14 @@ use Laravel\Sanctum\HasApiTokens;
 //     public function adress(){
 //         return $this->hasMany(Adress::class)->withTimestamps();
 //     }
-    
+
 // }
-class User extends Authenticatable
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'username',
-        'email',
-        'password',
-    ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    public function setPasswordAttribute($value){
-        $this->attributes['password'] = bcrypt($value);
-    }
-
-    
     public function cart(){
 
         return $this->hasOne(Cart::class)->withTimestamps();
@@ -70,4 +37,40 @@ class User extends Authenticatable
     public function adress(){
         return $this->hasMany(Adress::class)->withTimestamps();
     }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    // protected $fillable = [
+    //     'username',
+    //     'email',
+    //     'password',
+    // ];
+
+    // /**
+    //  * The attributes that should be hidden for serialization.
+    //  *
+    //  * @var array<int, string>
+    //  */
+    // protected $hidden = [
+    //     'password',
+    //     'remember_token',
+    // ];
+
+    // /**
+    //  * The attributes that should be cast.
+    //  *
+    //  * @var array<string, string>
+    //  */
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+
+    // public function setPasswordAttribute($value){
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
+
+
+
 }
