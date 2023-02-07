@@ -38,17 +38,17 @@ class AdminController extends Controller
         return view('admin.editar', @compact('product'));
         }
         public function actualizar(Request $request, $id) {
-        $request -> validate([
-        'nombre' => 'required',
-        'description' => 'required'
-        ]);
-        $updateProduct = Product::findOrFail($id);
-        $updateProduct -> name = $request -> name;
-        $updateProduct -> price = $request -> price;
-        $updateProduct -> stock = $request -> stock;
-        $updateProduct -> description = $request -> description;
-/*         $updateProduct -> fotosProd = $request -> fotosProd;
-        $updateProduct -> category_id = $request -> category_id; */
+            $updateProduct = Product::findOrFail($id);
+            $updateProduct -> name = $request -> name;
+            $updateProduct -> price = $request -> price;
+            $updateProduct -> stock = $request -> stock;
+            $updateProduct -> description = $request -> description;
+            /*$updateProduct -> fotosProd = $request -> fotosProd;
+            $updateProduct -> category_id = $request -> category_id; 
+            $request -> validate([
+            'nombre' => 'required',
+            'description' => 'required'
+            ]);*/
         $updateProduct -> save();
         return back() -> with('mensaje', 'Producto actualizado');
     }
