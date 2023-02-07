@@ -33,6 +33,12 @@ Route::get('/about', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/admin/crear', function () {
+    return view('admin/crear');
+});
+Route::get('/admin/editar', function () {
+    return view('admin/editar');
+});
 
 Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
@@ -42,10 +48,12 @@ Con prefix tomará */
 
     Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')->group(function () {
         Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+
         Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
         Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
 
         Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
         Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
+        
         Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
     });

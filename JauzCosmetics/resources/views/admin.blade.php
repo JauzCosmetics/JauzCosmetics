@@ -27,7 +27,7 @@
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->category }}</td>
                     <td>{{ $product->fotosProd }}</td>
-                    <td><a href="{{ route('admin.editar', $product) }}"><button class="btn btn-secondary" type="submit"><i
+                    <td><a href="{{ route('admin/editar', $product) }}"><button class="btn btn-secondary" type="submit"><i
                                     class="bi bi-pencil"></i></button></a></td>
                     <td>
                         <form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="d-inline">
@@ -40,7 +40,7 @@
             @endforeach
         </table>
 
-        <a href="{{ route('admin.crear') }}"></a>
+        <a href="{{ route('admin') }}"></a>
         <button class="btn btn-primary btn-block" type="submit">Crear</button></h3>
     </div>
 @endsection
