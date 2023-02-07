@@ -34,38 +34,26 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
-Route::get('/maquillaje', [ShopController::class, 'paginate'])->name('maquillaje');;
-
-Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
-Route::get('/accesorio', [ShopController::class, 'paginateAcces'])->name('accesorio');
-/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
-Con prefix tomará */
-Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')-> group (function(){
-    Route::get('',[ AdminController::class, 'productos' ])-> name('admin.productos');
-    Route::get('.crear', [ AdminController::class, 'crear' ]) -> name('admin.crear');
-    Route::get('.editar/{id}', [ AdminController::class, 'editar' ]) -> name('admin.editar');
-    Route::put('.editar/{id}', [ AdminController::class, 'actualizar' ]) -> name('admin.actualizar');
-    Route::delete('eliminar/{id}', [ AdminController::class, 'eliminar' ]) -> name('admin.eliminar');
-});
-
-
-Route::get('/', function () {
-    return view('index');
-})->middleware('auth');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::get('/register', function () {
-    return view('auth.register');
-});
+    return view('register');
+})->name('register');
 
-Route::post('/register',[RegisterController::class,'register']);
-// // Login
-// Route::get('/login', [AuthController::class, 'login'])->name('login');
-// Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
+Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
+Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 
-// // Register
-// Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
-// Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
+/* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
+Con prefix tomará */
 
-// // Logout
-// Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::prefix('/admin')->namespace('App\\Http\\Controllers\\Admin')->group(function () {
+        Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+        Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
+        Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
+
+        Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
+        Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
+        Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+    });
