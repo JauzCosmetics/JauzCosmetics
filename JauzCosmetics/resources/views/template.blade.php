@@ -17,7 +17,7 @@
     <script defer src="assets/js/bootstrap.bundle.min.js"></script>
     <script defer src="assets/js/templatemo.js"></script>
     <script defer src="assets/js/custom.js"></script>
-    
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
 @endsection
 
