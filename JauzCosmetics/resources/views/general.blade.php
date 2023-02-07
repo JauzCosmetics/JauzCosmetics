@@ -16,6 +16,8 @@
     @yield('products')
     @yield('contact')
     @yield('about')
+    @yield('login')
+    @yield('register')
     @yield('footer')
 </body>
 </html>
