@@ -51,6 +51,9 @@
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                       <button type="button" class="btn btn-primary btn-lg">Registrarse</button>
                     </div>
+                    <div class="text-center">
+                      <p>Volver a <a href="{{route('login')}}">Iniciar sesión</a></p>
+                    </div>
   
                   </form>
   
