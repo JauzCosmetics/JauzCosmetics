@@ -7,6 +7,7 @@
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -61,7 +62,7 @@
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="{{route('login')}}">
                         <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">9</span>
