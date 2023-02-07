@@ -14,7 +14,7 @@
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registro de usuario</p>
   
                   <form class="mx-1 mx-md-4" action="/register" method="POST">
-  
+                    @csrf
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -49,7 +49,7 @@
   
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <input type="submit" class="btn btn-primary btn-lg">Registrarse</input>
+                      <input type="submit" name="" id="" class="btn btn-primary" value="Registrarse">
                     </div>
                     <div class="text-center">
                       <p>Volver a <a href="{{route('login')}}">Iniciar sesión</a></p>
