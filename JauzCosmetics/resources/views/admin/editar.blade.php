@@ -6,8 +6,7 @@
     @if (session('mensaje'))
         <div class="alert alert-success">{{ session('mensaje') }}</div>
     @endif
-    @foreach ($products as $product)
-    <form action="{{ route('admin.actualizar', $product->id) }}" method="POST">
+    <form action="{{ route('admin.actualizar', $product-> id) }}" method="POST">
         @method('PUT') {{-- Necesitamos cambiar al método PUT para editar --}}
         @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
 
@@ -35,11 +34,10 @@
             <div class="alert alert-danger"> Las imágenes es obligatoria </div>
         @enderror
 
-        <input type="text" name="name" class="form-control mb-2" value="{{ $product->name }}"
+        <input type="text" name="name" class="form-control mb-2" value="{{ $product-> name }}"
             placeholder="Nombre del producto" autofocus>
         <input type="text" name="description" placeholder="Descripción del producto" class="form-control mb-2"
-            value="{{ $product->description }}">
+            value="{{ $product-> description }}">
         <button class="btn btn-primary btn-block" type="submit">Guardar cambios</button>
     </form>
-    @endforeach
 @endsection
