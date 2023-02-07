@@ -70,7 +70,7 @@
                     <div class="card-body">
                         <h5 class="mt-3 mb-3">{{$product -> name}}</h5>
                         <p class="card-text">{{$product -> description}}</p>
-                        <p ><a href="/article/{{$product->id}}" class="btn bgpropio text-white">Ver más</a></p>
+                        <p ><a href="{{route('article.details', $product->id)}}" class="btn bgpropio text-white">Ver más</a></p>
                     </div>
                 </div>
             </div>

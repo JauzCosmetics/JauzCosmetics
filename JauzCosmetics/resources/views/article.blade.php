@@ -86,29 +86,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">{{$product->name}}</h1>
-                            <p class="h3 py-2">$25.00</p>
+                            <p class="h3 py-2">{{$product->price}}€</p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <h6>Marca:</h6>
-                                </li>
-                                <li class="list-inline-item">
-                                    <p class="text-muted"><strong>Easy Wear</strong></p>
+                                    <p class="text-muted"><strong>{{$product->category}}</strong></p>
                                 </li>
                             </ul>
 
                             <h6>Descripción:</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
-
-                            <h6>Specification:</h6>
-                            <ul class="list-unstyled pb-3">
-                                <li>Lorem ipsum dolor sit</li>
-                                <li>Amet, consectetur</li>
-                                <li>Adipiscing elit,set</li>
-                                <li>Duis aute irure</li>
-                                <li>Ut enim ad minim</li>
-                                <li>Dolore magna aliqua</li>
-                                <li>Excepteur sint</li>
-                            </ul>
+                            <p>{{$product->description}}</p>
 
                             <form action="" method="POST">
                                 <input type="hidden" name="product-title" value="Activewear">
