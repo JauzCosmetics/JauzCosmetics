@@ -20,8 +20,8 @@ return new class extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->string('description');
-            $table->json('fotosProd')->default(new Expression('(JSON_ARRAY())'));
             $table->enum('category',['maquillaje','accesorio']);
+            $table->json('fotosProd')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
         });
     }

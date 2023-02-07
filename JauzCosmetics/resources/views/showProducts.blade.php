@@ -11,12 +11,18 @@
                 <li class="pb-3">
                     {{-- aqui al pinchar debemos mostrar en las cartas que se generen de la tabla producto categoria maquillaje  --}}
                     <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="{{route('maquillaje')}}">
-                        Maquillaje
+                       @if($category=='maquillaje') <h3>Maquillaje</h3>
+                       @else
+                       Maquillaje
+                       @endif
                     </a>
                 </li>
                 <li class="pb-3">
                     <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="{{route('accesorio')}}">
-                        Accesorios
+                        @if($category=='accesorio') <h3>Accesorio</h3>
+                        @else
+                        Accesorio
+                        @endif
                     </a>
                 </li>
 
@@ -26,7 +32,7 @@
             <div class="row">
                 @foreach ($products as $product)
                 {{-- aquí comienza la carta que se generará al pasar la categoria y todo lo que haya dentro d esta categoría --}}
-                @if ($product -> category_id === 1)
+
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
@@ -46,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+
                 @endforeach
                 {{-- aqui finalia la carta las demás sobran solo estan a modo de poder ver el diseño final --}}
             </div>

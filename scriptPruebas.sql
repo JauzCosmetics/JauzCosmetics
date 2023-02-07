@@ -1,6 +1,3 @@
-INSERT INTO `categories`( `name`,`created_at`) VALUES 
-('Maquillaje','2023-02-05 18:15:00'),
-('Accesorio','2023-02-05 18:15:00');
 
 INSERT INTO `products`(`id`, `name`, `price`, `stock`, `description`, `category`, `created_at`) VALUES 
 ('1','Kit Maiko',30.45,5,'Estuche con productos Maiko','accesorio','2023-02-04 13:34:00'),
