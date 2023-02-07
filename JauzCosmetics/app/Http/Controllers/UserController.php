@@ -22,6 +22,7 @@ class UserController extends Controller
         $userNuevo -> password = $request -> password;
         $userNuevo -> rol = 'user';
         $userNuevo -> save();
+
         return back() -> with('mensaje', 'Usuario agregado exitosamente');
     }
 }
