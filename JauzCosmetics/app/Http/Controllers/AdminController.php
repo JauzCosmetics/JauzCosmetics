@@ -9,12 +9,12 @@ class AdminController extends Controller
 {
     public function productos() {
         $products = Product::all(); // Nos saca todos los productos de la BBDD
-        return view('admin', compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('admin', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function usuarios() {
         $usuers = User::all(); // Nos saca todos los productos de la BBDD
-        return view('admin', compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('admin', @compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function crear (){
@@ -35,7 +35,7 @@ class AdminController extends Controller
     }
     public function editar($id) {
         $products = Product::findOrFail($id);
-        return view('editar', compact('products'));
+        return view('editar', @compact('products'));
         }
         public function actualizar(Request $request, $id) {
         $request -> validate([
