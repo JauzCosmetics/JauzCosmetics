@@ -137,14 +137,13 @@
                         </ul>
                         {{-- aquí termina --}}
                     </div>
-                    <a class="nav-icon position-relative text-decoration-none" href="{{ route('login') }}">
-                        <i class="fa fa-fw fa-user text-secondary mr-3"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">1</span>
-                    </a>
-                    <ul class="navbar-nav">
-                        <!-- Authentication Links -->
-                        @guest
+                    <div class="dropdown text-decoration-none ">
+                        <button class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-fw fa-user text-secondary mr-3"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-cart bgpropio" role="menu">
+                            @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -166,32 +165,12 @@
                                 </form>
                             </div>
                         @endguest
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </div>
     </nav>
-@endsection
-
-@section('modal')
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="buscador"
-                        placeholder="Buscar ...">
-                    <button type="submit" class="input-group-text colorPropio text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 @endsection
 
 @section('footer')
