@@ -53,6 +53,10 @@ Route::post('/register',[UserController::class,'registrar'])->name('user.registr
 Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 
+Route::get('/table', function () {
+    return view('table');
+})->name('table');
+
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
