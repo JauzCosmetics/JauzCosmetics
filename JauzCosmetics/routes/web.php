@@ -49,13 +49,14 @@ Route::get('/register', function () {
 
 Route::get('/cart', function () {
     return view('cart');
-});
+})->name('cart');
 
 Route::post('/register',[UserController::class,'registrar'])->name('user.registrar');
 
 
 Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
+Route::get('/allProducts', [ShopController::class, 'products'])->name('allProducts');
 
 
 

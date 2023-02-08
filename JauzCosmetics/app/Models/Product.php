@@ -19,4 +19,8 @@ class Product extends Model
     public static function accesorio(int $param){
         return Product::where('category', 'accesorio')->paginate($param);
     }
+
+    public static function allProducts(int $param){
+        return Product::query()->paginate($param);
+    }
 }
