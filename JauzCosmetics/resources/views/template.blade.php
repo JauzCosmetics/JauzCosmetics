@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/versión/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{{URL::asset('assets/css/fontawesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick-theme.css')}}">
