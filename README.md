@@ -1,5 +1,9 @@
 ### Hi there 👋
 
+Abrir 2 server: <br>
+  php artisan serve <br>
+  npm i && npm run dev
+
 <!--
 **JauzCosmetics/JauzCosmetics** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
