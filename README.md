@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 Abrir 2 server:
-  php artisan serve 
+  php artisan serve <br>
   npm i && npm run dev
 
 <!--
