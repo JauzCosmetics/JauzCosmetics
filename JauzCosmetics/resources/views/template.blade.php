@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
+
     <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{URL::asset('assets/css/fontawesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick-theme.css')}}">
@@ -17,17 +20,17 @@
     <script defer src="{{URL::asset('assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
     <script defer src="{{URL::asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script defer src="{{URL::asset('assets/js/custom.js')}}"></script>
-    {{-- <script defer src="{{URL::asset('assets/js/templatemo.js')}}"></script> --}}
+    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}"
     <link rel="stylesheet" href="{{URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')}}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     @endsection
 
+
 @section('nav')
-    <nav class="navbar  bgpropio navbar-expand-lg  navbar-light shadow sticky-top" >
+    <nav class="navbar  bgpropio navbar-expand-lg  navbar-light shadow sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
 
             <p class="navbar-brand text-white logo h1 align-self-center">
@@ -44,30 +47,98 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="{{route('index')}}">Home</a>
+                            <a class="nav-link fw-bolder" href="{{ route('index') }}">Home</a>
                         </li>
-                        <div class="dropdown ">
-                            <button class="btn bgpropio nav-link fw-bolder text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Shop
-                            </button>
-                            <ul class="dropdown-menu text-white  bgpropio " aria-labelledby="dropdownMenuButton1">
-                                {{-- nuevas vistas para maquillaje y accesorios cambiar la vista de product--}}
-                              <li><a class="dropdown-item" href="{{route('maquillaje')}}">Maquillaje</a></li>
-                              <li><a class="dropdown-item" href="{{route('accesorio')}}">Accesorios</a></li>
-                            </ul>
-                          </div>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" href="{{route('contact')}}">Contacto</a>
+                            <a class="nav-link fw-bolder" href="{{ route('allProducts') }}">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder" href="{{ route('contact') }}">Contacto</a>
                         </li>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-secondary mr-1"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="{{route('login')}}">
+                    <div class="dropdown text-decoration-none">
+                        <button class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-fw fa-cart-arrow-down text-secondary mr-1"></i>
+                            <span
+                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        </button>
+                        {{-- aqui emplieza el dropdown de cart --}}
+                        {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
+                        <ul class="dropdown-menu dropdown-cart" role="menu">
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_1.jpg"
+                                            alt="" />
+                                        <span class="item-info">
+                                            <span>Item name</span>
+                                            <span>price: 27$</span>
+                                        </span>
+                                    </span>
+                                    <span class="item-right">
+
+                                        <button class="btn btn-danger fas fa-trash"></button>
+                                    </span>
+                                </span>
+                            </li>
+                            {{-- hasta aquí el foreach ------------------------------------------------------------------------------------ --}}
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_2.jpg"
+                                            alt="" />
+                                        <span class="item-info">
+                                            <span>Item name</span>
+                                            <span>price: 3$</span>
+                                        </span>
+                                    </span>
+                                    <span class="item-right">
+                                        <button class="btn btn-danger fas fa-trash"></button>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_3.jpeg"
+                                            alt="" />
+                                        <span class="item-info">
+                                            <span>Item name</span>
+                                            <span>price: 12$</span>
+                                        </span>
+                                    </span>
+                                    <span class="item-right">
+                                        <button class="btn btn-danger  fas fa-trash"></button>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_4.jpg"
+                                            alt="" />
+                                        <span class="item-info">
+                                            <span>Item name</span>
+                                            <span>price: 7$</span>
+                                        </span>
+                                    </span>
+                                    <span class="item-right">
+                                        <button class="btn btn-danger  fas fa-trash"></button>
+                                    </span>
+                                </span>
+                            </li>
+                            {{-- esto no se borra viene luego del foreach --}}
+                            <hr class="my-4" />
+                            <li class=" text-center">
+                                <a class="text-dark" href="{{ route('cart') }}">Ver carrito</a>
+                            </li>
+                        </ul>
+                        {{-- aquí termina --}}
+                    </div>
+                    <a class="nav-icon position-relative text-decoration-none" href="{{ route('login') }}">
                         <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">1</span>
@@ -105,21 +176,23 @@
 @endsection
 
 @section('modal')
-<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="w-100 pt-1 mb-5 text-right">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form action="" method="get" class="modal-content modal-body border-0 p-0">
-            <div class="input-group mb-2">
-                <input type="text" class="form-control" id="inputModalSearch" name="buscador" placeholder="Buscar ...">
-                <button type="submit" class="input-group-text colorPropio text-light">
-                    <i class="fa fa-fw fa-search text-white"></i>
-                </button>
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </form>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="buscador"
+                        placeholder="Buscar ...">
+                    <button type="submit" class="input-group-text colorPropio text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 @endsection
 
 @section('footer')
@@ -148,8 +221,8 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="{{route('maquillaje')}}">Maquillaje</a></li>
-                        <li><a class="text-decoration-none"href="{{route('accesorio')}}">Accesorios</a></li>
+                        <li><a class="text-decoration-none" href="{{ route('maquillaje') }}">Maquillaje</a></li>
+                        <li><a class="text-decoration-none"href="{{ route('accesorio') }}">Accesorios</a></li>
                     </ul>
                 </div>
 
@@ -203,10 +276,9 @@
                 </div>
             </div>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
-                <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+                <img alt="Licencia de Creative Commons" style="border-width:0"
+                    src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
             </a>
         </div>
     </footer>
-
 @endsection
-

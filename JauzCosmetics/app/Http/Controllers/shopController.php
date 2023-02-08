@@ -19,6 +19,12 @@ class ShopController extends Controller
         return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
+    public function products()
+    {
+        $products = Product::allProducts(2);
+        $category = 'allProducts';
+        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+    }
     public function productos()
     {
         $products = Product::all();

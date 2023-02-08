@@ -16,6 +16,7 @@
     @yield('contact')
     @yield('adminTable')
     @yield('about')
+    @yield('cart')
     @yield('login')
     @yield('register')
     @yield('footer')

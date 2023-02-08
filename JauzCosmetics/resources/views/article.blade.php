@@ -5,9 +5,9 @@
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
-                <div class="col-lg-5 mt-5">
+                <div class="col-lg-6 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" style="max-width: 526px; max-height: 526px;" src="assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" style="max-width: 526px; max-height: 526px;" src="./assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -28,17 +28,17 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="assets/img/maiko1.jpg" alt="Product Image 1">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko1.jpg" alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="assets/img/maiko2.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko2.jpg" alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="assets/img/maiko3.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko3.jpg" alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -50,17 +50,17 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko4.jpg" alt="Product Image 4">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko4.jpg" alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko5.jpg" alt="Product Image 5">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko5.jpg" alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="assets/img/maiko6.jpg" alt="Product Image 6">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko6.jpg" alt="Product Image 6">
                                             </a>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <!-- col end -->
-                <div class="col-lg-7 mt-5">
+                <div class="col-lg-6 mt-5">
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">{{$product->name}}</h1>
@@ -92,35 +92,24 @@
                                     <p class="text-muted"><strong>{{$product->category}}</strong></p>
                                 </li>
                             </ul>
-
                             <h6>Descripción:</h6>
                             <p>{{$product->description}}</p>
 
-                            <form action="" method="POST">
-                                <input type="hidden" name="product-title" value="Activewear">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item text-right">
-                                                Cantidad
-                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn bgpropio text-white" id="btn-minus">-</span></li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn bgpropio text-white" id="btn-plus">+</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row pb-3">
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn bgpropio text-white btn-lg" name="submit" value="buy">Comprar</button>
-                                    </div>
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn bgpropio text-white  btn-lg" name="submit" value="addtocard">Añadir al carrito</button>
-                                    </div>
-                                </div>
-                            </form>
+                                <form action="" method="POST">
 
+
+                                <form action="" method="POST">
+                                    <input type="hidden" name="product-title" value="Activewear">
+
+                                    <div class="row pb-3">
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg" name="submit" value="viewCart"><p class="m-0">Añadir al carrito</p></button>
+                                        </div>
+                                        <div class="col d-grid">
+                                            <a href="" type="button" class="btn bgpropio text-white text-decoration-none btn-lg" name="submit" value="addcart">Seguir comprando</a>
+                                        </div>
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
