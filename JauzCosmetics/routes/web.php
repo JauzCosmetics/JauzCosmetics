@@ -60,6 +60,10 @@ Route::get('/allProducts', [ShopController::class, 'products'])->name('allProduc
 
 
 
+Route::get('/table', function () {
+    return view('table');
+})->name('table');
+
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 

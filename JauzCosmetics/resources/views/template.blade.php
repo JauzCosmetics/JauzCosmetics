@@ -4,27 +4,30 @@
     <title>Jauz Cosmetics</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
-    <link
-        rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/versión/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/slick.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/slick-theme.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/templatemo.css') }}">
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/> --}}
-    <script defer src="{{ URL::asset('assets/js/jquery-1.11.0.min.js') }}"></script>
-    <script defer src="{{ URL::asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
-    <script defer src="{{ URL::asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script defer src="{{ URL::asset('assets/js/custom.js') }}"></script>
+    <link rel="stylesheet" href="{{URL::asset('assets/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/templatemo.css')}}">
+    <script defer src="{{URL::asset('assets/js/jquery-1.11.0.min.js')}}"></script>
+    <script defer src="{{URL::asset('assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script defer src="{{URL::asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script defer src="{{URL::asset('assets/js/custom.js')}}"></script>
     <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-@endsection
+    <link rel="stylesheet" href="{{URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')}}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Styles -->
+    @vite(['resources/js/app.js', 'resources/css/app.scss'])
+    @endsection
+
 
 @section('nav')
     <nav class="navbar  bgpropio navbar-expand-lg  navbar-light shadow sticky-top">
@@ -138,8 +141,33 @@
                     <a class="nav-icon position-relative text-decoration-none" href="{{ route('login') }}">
                         <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">9</span>
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">1</span>
                     </a>
+                    <ul class="navbar-nav">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                                </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        @endguest
+                    </ul>
                 </div>
             </div>
 
