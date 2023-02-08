@@ -24,7 +24,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
-    @vite(['resources/js/app.js', 'resources/css/app.scss'])
+    {{-- @vite(['resources/js/app.js', 'resources/css/app.scss']) --}}
     @endsection
 
 
