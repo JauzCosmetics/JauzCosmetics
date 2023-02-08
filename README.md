@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Abrir 2 server:
+Abrir 2 server: <br>
   php artisan serve <br>
   npm i && npm run dev
 
