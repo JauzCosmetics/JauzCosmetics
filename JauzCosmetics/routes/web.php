@@ -36,20 +36,29 @@ Route::get('/admin/editar', function () {
     return view('admin/editar');
 });
 
-Route::get('/login', function () {
-    return view('auth/login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('auth/login');
+// })->name('login');
 
-Route::get('/register', function () {
-    return view('auth/register');
-})->name('register');
+// Route::get('/register', function () {
+//     return view('auth/register');
+// })->name('register');
 
 Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
-Route::post('/register',[UserController::class,'registrar'])->name('user.registrar');
+// Route::post('/register',[UserController::class,'register'])->name('user.register');
 
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/home', function () {
+    return view('index');
+})->middleware('auth');
+
+Route::post('logout', [ClientController::class, 'logout'])->name('logout');
 
 Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');

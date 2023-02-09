@@ -1,6 +1,13 @@
 @extends('template')
 
+    @if(session('status'))
+        <div class="alert alert-success" role="alert">
+            {{session('status')}}
+            You are logged in!
+        </div>
+    @endif
 
+</div>
 @section('carrousel')
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -62,9 +69,9 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($products as $product)
+            {{-- @foreach ($products as $product) --}}
             {{-- aquí comienza la carta que genera las novedades a falta de mostrar solo los últimos creados(order by id desc)--}}
-            <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
+            {{-- <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
                 <div class="card" style="width: 20rem;">
                     <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -73,9 +80,9 @@
                         <p ><a href="{{route('article.details', $product->id)}}" class="btn bgpropio text-white">Ver más</a></p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- aquí termina la carta--}}
-            @endforeach
+            {{-- @endforeach --}}
         </div>
     </section>
 @endsection
