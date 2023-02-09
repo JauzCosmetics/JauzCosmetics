@@ -27,8 +27,7 @@ class ShopController extends Controller
     }
     public function productos()
     {
-        $products = Product::all();
-        // Nos saca todos los productos de la BBDD
+        $products = Product::productos();
 
         return view('index', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
