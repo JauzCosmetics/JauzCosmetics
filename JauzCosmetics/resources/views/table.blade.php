@@ -182,7 +182,7 @@
               <!-- Card Body -->
               <div class="card-body">
                   <div class="chart-area">
-                      <canvas id="myAreaChart"></canvas>
+                      <canvas id="myChart"></canvas>
                   </div>
               </div>
           </div>
@@ -212,8 +212,8 @@
               </div>
               <!-- Card Body -->
               <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                      <canvas id="myPieChart"></canvas>
+                  <div class="chart-area pt-4 pb-2">
+                      <canvas id="barChart"></canvas>
                   </div>
                   <div class="mt-4 text-center small">
                       <span class="mr-2">
