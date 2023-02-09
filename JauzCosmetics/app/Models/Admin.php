@@ -16,4 +16,7 @@ class Admin extends Model
 
         return $this->hasOne(User::class)->withTimestamps();
     }
+    public static function usuarioAdmin(){
+        return User::where('rol', 'admin');
+    }
 }

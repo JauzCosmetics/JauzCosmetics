@@ -1,18 +1,24 @@
-@extends('template')
+@extends('layout.main')
 
 @section('editar')
-<div class="container py-5 col-2">
+<div class="container py-5 col-4">
     <div class="row py-5 text-center">
-        <h2 class="mb-5">Editando el producto {{ $product->id }}</h2>
+        <h2 class="mb-5">Editando el producto {{ $product->name }}</h2>
 
         @if (session('mensaje'))
             <div class="alert alert-success">{{ session('mensaje') }}</div>
         @endif
-    
-            <input type="text" name="price" placeholder="Descripción del producto" class="form-control mb-2"
+
+        <form class="col-md-9 m-auto" action="{{ route('admin.actualizar', $product->id) }}" method="POST">
+            @method('PUT')
+            @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
+            <input type="text" name="name" placeholder="Nombre del producto" class="form-control mb-2"
+            value="{{ $product-> name }}">
+
+            <input type="text" name="price" placeholder="Precio del producto" class="form-control mb-2"
             value="{{ $product-> price }}">
     
-            <input type="text" name="stock" placeholder="Descripción del producto" class="form-control mb-2"
+            <input type="text" name="stock" placeholder="Stock del producto" class="form-control mb-2"
             value="{{ $product-> stock }}">
     
             <input type="text" name="description" placeholder="Descripción del producto" class="form-control mb-2"
@@ -36,13 +42,6 @@
                 <div class="alert alert-danger"> La descripción es obligatoria </div>
             @enderror
     
-            @error('category')
-                <div class="alert alert-danger"> La categoría es obligatoria </div>
-            @enderror
-    
-            @error('fotosProd')
-                <div class="alert alert-danger"> Las imágenes es obligatoria </div>
-            @enderror
         </form>   
     </div>
 </div>

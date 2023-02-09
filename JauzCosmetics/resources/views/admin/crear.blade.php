@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layout.main')
 
 @section('crear')
     <div class="container py-5">
