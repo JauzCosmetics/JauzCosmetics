@@ -7,7 +7,7 @@
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+      <h1 class="h3 mb-0 text-gray-800">Bienvenido Administradror </h1>
       <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
               class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
   </div>
@@ -30,10 +30,10 @@
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->category }}</td>
                     <td>{{ $product->fotosProd }}</td>
-                    <td><a href="{{ route('admin.editar', $product->id) }}"><button class="btn btn-secondary" type="submit"><i
+                    <td><a href="{{ route('admin.editar', $product->id) }}" class="row justify-content-center"><button class="btn btn-primary" type="submit"><i
                                     class="bi bi-pencil"></i></button></a></td>
                     <td>
-                        <form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="d-inline">
+                        <form action="{{ route('admin.eliminar', $product->id) }}" method="POST" class="row justify-content-center">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-danger" type="submit"><i class="bi bi-trash"></i></button>
@@ -44,9 +44,14 @@
 
               </tbody>
             </table>
-            <a href="{{ route('admin.crear') }}">
-              <button class="btn btn-primary btn-block" type="submit">Crear</button></h3></a>
-          </div>
+            
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <a href="{{ route('admin.crear') }}">
+                <button class="btn btn-primary" type="submit">Crear</button></h3></a>
+            </div>
+        </div>
         </div>
   </div>
   <!-- Content Row -->
