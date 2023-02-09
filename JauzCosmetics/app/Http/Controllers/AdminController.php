@@ -37,6 +37,7 @@ class AdminController extends Controller
         $product = Product::findOrFail($id);
         return view('admin.editar', @compact('product'));
         }
+
         public function actualizar(Request $request, $id) {
             $updateProduct = Product::findOrFail($id);
             $updateProduct -> name = $request -> name;

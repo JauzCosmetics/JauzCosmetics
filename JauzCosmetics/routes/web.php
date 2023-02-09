@@ -29,9 +29,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 Route::get('/admin/crear', function () {
     return view('admin/crear');
 });
