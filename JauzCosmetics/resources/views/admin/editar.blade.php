@@ -1,9 +1,9 @@
-@extends('template')
+@extends('layout.main')
 
 @section('editar')
-<div class="container py-5 col-2">
+<div class="container py-5 col-4">
     <div class="row py-5 text-center">
-        <h2 class="mb-5">Editando el producto {{ $product->id }}</h2>
+        <h2 class="mb-5">Editando el producto {{ $product->name }}</h2>
 
         @if (session('mensaje'))
             <div class="alert alert-success">{{ session('mensaje') }}</div>
