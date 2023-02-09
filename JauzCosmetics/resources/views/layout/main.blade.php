@@ -32,9 +32,9 @@
       </div>
       <!-- End of Main Content -->
  
-      @include('layout.footer')
- 
     </div>
+      
+    @include('layout.footer')
     <!-- End of Content Wrapper -->
  
   </div>
