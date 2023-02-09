@@ -21,6 +21,17 @@
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Stock</td>
+                    <td>Description</td>
+                    <td>Category</td>
+                    <td>Imágenes</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
+              </thead>
                 @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
