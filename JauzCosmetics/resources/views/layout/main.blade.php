@@ -27,6 +27,18 @@
             @yield('content')
  
         </div>
+
+        <div class="container-fluid">
+ 
+          @yield('crear')
+
+      </div>
+
+      <div class="container-fluid">
+ 
+        @yield('editar')
+
+    </div>
         <!-- /.container-fluid -->
  
       </div>
