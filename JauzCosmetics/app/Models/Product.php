@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\DB;
 class Product extends Model
 {
     use HasFactory;
@@ -22,5 +22,9 @@ class Product extends Model
 
     public static function allProducts(int $param){
         return Product::query()->paginate($param);
+    }
+
+    public static function productos(){
+        return DB::table('products')-> orderBy ( 'id' , 'desc' )->limit(3)->get();;
     }
 }
