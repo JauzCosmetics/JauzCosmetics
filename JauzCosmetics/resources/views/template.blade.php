@@ -153,15 +153,12 @@
                                 </li>
                             @endif
                         @else
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ Auth::user()->username }}
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
-                                </ul>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <div class="dropdown text-center">
+                                <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                  <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                                <form id="logout-form" name="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
+                                    {{ csrf_field() }}
                                 </form>
                             </div>
                         @endguest
