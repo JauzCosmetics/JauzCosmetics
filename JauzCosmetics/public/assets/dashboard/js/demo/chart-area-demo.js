@@ -1,4 +1,6 @@
   const ctx = document.getElementById('myChart');
+  
+
 
   new Chart(ctx, {
     type: 'bar',
@@ -6,7 +8,7 @@
       labels: ['Maquillaje', 'Accesorios'],
       datasets: [{
         label: 'Numero de productos por categoría',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [10,15],
         borderWidth: 1
       }]
     },
@@ -22,8 +24,8 @@
   const barraLateral = document.getElementById('barChart');
 
   let barraChart = {
-    label: 'Density of Planets (kg/m3)',
-    data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638],
+    label: 'Cantidad de productos en Stock',
+    data: [10,5,8,6,3,4,7],
     backgroundColor: [
       'rgba(0, 99, 132, 0.6)',
       'rgba(30, 99, 132, 0.6)',
@@ -62,10 +64,10 @@
       }
     }
   };
-  let barChart = new Chart(barraChart, {
-    type: 'horizontalBar',
+new Chart(barraLateral, {
+    type: 'bar',
     data: {
-      labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+      labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus"],
       datasets: [barraChart],
     },
     options: chartOptions
