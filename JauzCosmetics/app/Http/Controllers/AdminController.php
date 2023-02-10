@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\ImgProduct;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -23,10 +24,17 @@ class AdminController extends Controller
 
     public function guardar(Request $request) {
         $newProduct = new Product;
+        $imgs = new ImgProduct;
         $newProduct -> name = $request -> name;
         $newProduct -> price = $request -> price;
         $newProduct -> stock = $request -> stock;
         $newProduct -> description = $request -> description;
+
+        foreach($imgs as $img){
+
+
+
+        }
         //$newProduct -> fotosProd = $request -> fotosProd;
         //$newProduct -> category_id = $request -> category_id;
         //$request -> validate([ 'name' => 'required', 'price' => 'required','stock' => 'required','description' => 'required','fotosProd' => 'required', 'category_id' => 'required']);
@@ -45,7 +53,7 @@ class AdminController extends Controller
             $updateProduct -> stock = $request -> stock;
             $updateProduct -> description = $request -> description;
             /*$updateProduct -> fotosProd = $request -> fotosProd;
-            $updateProduct -> category_id = $request -> category_id; 
+            $updateProduct -> category_id = $request -> category_id;
             $request -> validate([
             'nombre' => 'required',
             'description' => 'required'
