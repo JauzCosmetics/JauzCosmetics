@@ -11,17 +11,17 @@
                 <input type="text" name="stock" placeholder="Cantidad de unidades del producto"
                     class="form-control mb-2">
                 <input type="text" name="description" placeholder="Descripción del producto" class="form-control mb-2">
-                <div class="mb-3">
-                    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                <div class="mb-3 ">
+                    {{-- <label for="formFileMultiple" class="form-label"></label> --}}
+                    <input class="form-control" name="img" type="file" id="img" multiple>
                   </div>
                 {{--             <label for="category">Elige una categoría</label>
                 <select id="category" name="category">
                     <option value="maquillaje">Maquillaje</option>
                     <option value="accesorio">Accesorios</option>
                 </select>
-            <input type="file" name="fotosProd[0]">
-            <button type="submit">GUARDAR</button> --}}
+                <input type="file" name="fotosProd[0]">
+                <button type="submit">GUARDAR</button> --}}
                 <a href="admin">
                     <button class="btn btn-primary btn-block" type="submit">Guardar</button>
                 </a>
