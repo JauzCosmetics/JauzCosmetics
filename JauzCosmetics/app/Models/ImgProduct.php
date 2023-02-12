@@ -23,7 +23,7 @@ class ImgProduct extends Model
 
         foreach($arrayImg as $img){
 
-        $img = explode('" "', $imgs);
+        $img = explode('" "', $img);
 
         $renameImg = Str::replace( $img, ($nameProduct.$i.'.jpeg'), $img);
         $i++;
