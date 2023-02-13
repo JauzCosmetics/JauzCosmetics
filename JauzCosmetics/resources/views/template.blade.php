@@ -160,6 +160,10 @@
                             @else
                                 <div class="dropdown text-center">
                                     <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                    @if (Auth::user()->rol=='admin')
+                                        <li class="nav-item"><a class="dropdown-item" href="{{ route('table') }}">{{ __('Panel admin') }}</a>
+                                        </li>
+                                     @endif
                                     <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                     </li>
@@ -168,6 +172,7 @@
                                         @csrf
                                         {{ csrf_field() }}
                                     </form>
+
                                 </div>
                             @endguest
                         </ul>
