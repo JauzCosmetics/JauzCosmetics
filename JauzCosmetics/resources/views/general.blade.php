@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    @yield('head')
+@yield('head')
+
 <body>
     {{-- <div id="loader" class="spinner-border text-dark" role="status">
         <span class="sr-only">Loading...</span>
@@ -26,4 +26,5 @@
         @yield('footer')
     {{-- </div> --}}
 </body>
+
 </html>
