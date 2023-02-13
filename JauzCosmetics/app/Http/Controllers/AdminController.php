@@ -35,7 +35,7 @@ class AdminController extends Controller
         foreach ($request->img as $imagen) {
             $img= new ImgProduct();
 
-            $imageName = $i.'.'.$imagen->extension();
+            $imageName =$newProduct -> id.'_'.$i.'.'.$imagen->extension();
             $img->name = $imageName;
             $imagen->move(public_path('assets/img'.$newProduct->id), $imageName);
             $img->product_id = $newProduct->id;
