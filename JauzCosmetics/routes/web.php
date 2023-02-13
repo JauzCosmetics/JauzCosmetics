@@ -20,7 +20,7 @@ use App\Http\Controllers\ShopController;
 
 
 Route::get('/', [ShopController::class, 'productos'])->name('index');
-Route::get('/', [ImgController::class, 'imganes'])->name('index');
+
 Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
 
 Route::get('/contact', function () {
