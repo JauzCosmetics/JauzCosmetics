@@ -1,11 +1,11 @@
 @extends('template')
 
-    @if(session('status'))
-        <div class="alert alert-success" role="alert">
-            {{session('status')}}
-            You are logged in!
-        </div>
-    @endif
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+        You are logged in!
+    </div>
+@endif
 
 </div>
 @section('carrousel')
@@ -70,18 +70,19 @@
         </div>
         <div class="row">
             @foreach ($products as $product)
-            {{-- aquí comienza la carta que genera las novedades a falta de mostrar solo los últimos creados(order by id desc)--}}
-            <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
-                <div class="card" style="width: 20rem;">
-                    <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="mt-3 mb-3">{{$product -> name}}</h5>
-                        <p class="card-text">{{$product -> description}}</p>
-                        <p ><a href="{{route('article.details', $product->id)}}" class="btn bgpropio text-white">Ver más</a></p>
+                {{-- aquí comienza la carta que genera las novedades a falta de mostrar solo los últimos creados(order by id desc) --}}
+                <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="mt-3 mb-3">{{ $product->name }}</h5>
+                            <p class="card-text">{{ $product->description }}</p>
+                            <p><a href="{{ route('article.details', $product->id) }}" class="btn bgpropio text-white">Ver
+                                    más</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {{-- aquí termina la carta--}}
+                {{-- aquí termina la carta --}}
             @endforeach
         </div>
     </section>

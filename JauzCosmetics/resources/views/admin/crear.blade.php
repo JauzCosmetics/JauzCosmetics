@@ -27,36 +27,20 @@
                     <button class="btn btn-primary btn-block" type="submit">Guardar</button>
                 </a>
 
-                @if (session('mensaje'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('mensaje') }}
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
 
-                @error('name')
-                    <div class="alert alert-danger"> El nombre es obligatorio </div>
-                @enderror
-
-                @error('price')
-                    <div class="alert alert-danger"> El precio es obligatorio </div>
-                @enderror
-
-                @error('stock')
-                    <div class="alert alert-danger"> El stock es obligatorio </div>
-                @enderror
-
-                @error('description')
-                    <div class="alert alert-danger"> La descripción es obligatoria </div>
-                @enderror
+                @if (session('mensaje'))
+                    <div class="alert alert-success">{{ session('mensaje') }}</div>
+                @endif
             </form>
         </div>
     </div>
 @endsection
-{{--
-        @error('category')
-            <div class="alert alert-danger"> La categoría es obligatoria </div>
-        @enderror
-
-        @error('fotosProd')
-            <div class="alert alert-danger"> Las imágenes es obligatoria </div>
-        @enderror --}}

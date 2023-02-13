@@ -7,25 +7,28 @@
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
 
-    <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="{{URL::asset('assets/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/templatemo.css')}}">
-    <script defer src="{{URL::asset('assets/js/jquery-1.11.0.min.js')}}"></script>
-    <script defer src="{{URL::asset('assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
-    <script defer src="{{URL::asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-    <script defer src="{{URL::asset('assets/js/custom.js')}}"></script>
-    <link rel="stylesheet" href="{{URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')}}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/slick.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/templatemo.css') }}">
+    <script defer src="{{ URL::asset('assets/js/jquery-1.11.0.min.js') }}"></script>
+    <script defer src="{{ URL::asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script defer src="{{ URL::asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script defer src="{{ URL::asset('assets/js/custom.js') }}"></script>
+    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
     {{-- @vite(['resources/js/app.js', 'resources/css/app.scss']) --}}
-    @endsection
+@endsection
 
 
 @section('nav')
@@ -58,7 +61,8 @@
                 </div>
                 <div class="navbar align-self-center d-flex">
                     <div class="dropdown text-decoration-none">
-                        <button class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                        <button
+                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-cart-arrow-down text-secondary mr-1"></i>
                             <span
@@ -138,30 +142,34 @@
                         {{-- aquí termina --}}
                     </div>
                     <div class="dropdown text-decoration-none ">
-                        <button class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                        <button
+                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-cart bgpropio" role="menu">
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
+                            @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @endif
-                        @else
-                            <div class="dropdown text-center">
-                                <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
-                                  <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
-                                <form id="logout-form" name="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                    {{ csrf_field() }}
-                                </form>
-                            </div>
-                        @endguest
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <div class="dropdown text-center">
+                                    <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                    <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                    </li>
+                                    <form id="logout-form" name="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            @endguest
                         </ul>
                     </div>
                 </div>

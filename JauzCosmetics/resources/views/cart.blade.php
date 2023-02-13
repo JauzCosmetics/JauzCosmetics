@@ -113,7 +113,8 @@
                                 </li>
                             </ul>
                             <div class="text-white ms-4">
-                                <a href="http://" type="button" class="btn bgpropio btn-lg btn-block text-white ms-4 text-center ">
+                                <a href="http://" type="button"
+                                    class="btn bgpropio btn-lg btn-block text-white ms-4 text-center ">
                                     Seguir comprando
                                 </a>
                                 <a href="http://" type="button" class="btn bgpropio btn-lg btn-block text-white ms-3">

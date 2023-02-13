@@ -22,14 +22,31 @@ class UserController extends Controller
     // }
         
 
-    // public function registrar(Request $request) {
-    //     $userNuevo = new User;
-    //     $userNuevo -> username = $request -> username;
-    //     $userNuevo -> email = $request -> email;
-    //     $userNuevo -> password = $request -> password;
-    //     $userNuevo -> rol = 'user';
-    //     $userNuevo -> save();
+/*      public function registrar(Request $request) {
+        $request->validate([
+            'username' => 'required|min:6',
+            'email' => 'required|email',
+            'password' => 'required|min:8|password',
+            'rol' => 'required'
+        ]); 
+        
+        $errors = $request->has('errors');
 
-    //     return back() -> with('mensaje', 'Usuario agregado exitosamente');
-    // }
+        if (!$errors) {
+            $newUser = new User;
+            $newUser = new User;
+            $newUser -> username = $request -> username;
+            $newUser -> email = $request -> email;
+            $newUser -> password = $request -> password;
+            $newUser -> rol = 'user';
+            $newUser -> save();
+
+            return back() -> with('mensaje', 'Usuario agregado exitosamente');
+
+        } else {
+            $errors = $request->errors();
+            return back()->with('errors', $errors);
+        }
+
+     } */
 }
