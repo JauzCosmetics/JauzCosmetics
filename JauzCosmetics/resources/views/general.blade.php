@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    @yield('head')
+@yield('head')
+
 <body>
     @yield('nav')
     @yield('modal')
@@ -21,4 +21,5 @@
     @yield('register')
     @yield('footer')
 </body>
+
 </html>

@@ -1,13 +1,14 @@
 @extends('template')
 
 @section('article')
-<!-- Open Content -->
+    <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-6 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" style="max-width: 526px; max-height: 526px;" src="./assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" style="max-width: 526px; max-height: 526px;"
+                            src="./assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -19,7 +20,8 @@
                         </div>
                         <!--End Controls-->
                         <!--Start Carousel Wrapper-->
-                        <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
+                        <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item"
+                            data-bs-ride="carousel">
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
 
@@ -28,17 +30,20 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko1.jpg" alt="Product Image 1">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
+                                                    src="./assets/img/maiko1.jpg" alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko2.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
+                                                    src="./assets/img/maiko2.jpg" alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;" src="./assets/img/maiko3.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
+                                                    src="./assets/img/maiko3.jpg" alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -50,17 +55,20 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko4.jpg" alt="Product Image 4">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
+                                                    src="./assets/img/maiko4.jpg" alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko5.jpg" alt="Product Image 5">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
+                                                    src="./assets/img/maiko5.jpg" alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;" src="./assets/img/maiko6.jpg" alt="Product Image 6">
+                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
+                                                    src="./assets/img/maiko6.jpg" alt="Product Image 6">
                                             </a>
                                         </div>
                                     </div>
@@ -85,17 +93,17 @@
                 <div class="col-lg-6 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2">{{$product->name}}</h1>
-                            <p class="h3 py-2">{{$product->price}}€</p>
+                            <h1 class="h2">{{ $product->name }}</h1>
+                            <p class="h3 py-2">{{ $product->price }}€</p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>{{$product->category}}</strong></p>
+                                    <p class="text-muted"><strong>{{ $product->category }}</strong></p>
                                 </li>
                             </ul>
                             <h6>Descripción:</h6>
-                            <p>{{$product->description}}</p>
+                            <p>{{ $product->description }}</p>
 
-                                <form action="" method="POST">
+                            <form action="" method="POST">
 
 
                                 <form action="" method="POST">
@@ -103,10 +111,15 @@
 
                                     <div class="row pb-3">
                                         <div class="col d-grid">
-                                            <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg" name="submit" value="viewCart"><p class="m-0">Añadir al carrito</p></button>
+                                            <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg"
+                                                name="submit" value="viewCart">
+                                                <p class="m-0">Añadir al carrito</p>
+                                            </button>
                                         </div>
                                         <div class="col d-grid">
-                                            <a href="" type="button" class="btn bgpropio text-white text-decoration-none btn-lg" name="submit" value="addcart">Seguir comprando</a>
+                                            <a href="" type="button"
+                                                class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
+                                                value="addcart">Seguir comprando</a>
                                         </div>
                                     </div>
                                 </form>
@@ -116,6 +129,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection
