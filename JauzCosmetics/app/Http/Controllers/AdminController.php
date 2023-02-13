@@ -6,6 +6,7 @@ use App\Models\ImgProduct;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class AdminController extends Controller
 {
     public function productos() {
@@ -24,21 +25,28 @@ class AdminController extends Controller
 
     public function guardar(Request $request) {
         $newProduct = new Product;
-        $Newimgs = new ImgProduct;
         $newProduct -> name = $request -> name;
         $newProduct -> price = $request -> price;
         $newProduct -> stock = $request -> stock;
         $newProduct -> description = $request -> description;
-        // paso las imagenes recogídas en el formulario de crear (recoge un string)
-        $Newimgs -> imgSplit($request->img , $newProduct);
-
-
-        //$newProduct -> fotosProd = $request -> fotosProd;
-        //$newProduct -> category_id = $request -> category_id;
-        //$request -> validate([ 'name' => 'required', 'price' => 'required','stock' => 'required','description' => 'required','fotosProd' => 'required', 'category_id' => 'required']);
         $newProduct -> save();
-        $Newimgs -> save();
-        return back() -> with('mensaje', 'Producto agregado exitosamente');
+        // paso las imagenes recogídas en el formulario de crear (recoge un string)
+        $i = 0;
+        foreach ($request->img as $imagen) {
+            $img= new ImgProduct();
+
+            $imageName = $i.'.'.$imagen->extension();
+            $img->name = $imageName;
+            $imagen->move(public_path('assets/img'.$newProduct->id), $imageName);
+            $img->product_id = $newProduct->id;
+             $img->save();
+
+
+
+            $i++;
+        }
+
+        return back() -> with('mensaje', 'Producto agregado exitosamente'.$request);
     }
     public function editar($id) {
         $product = Product::findOrFail($id);

@@ -30,6 +30,6 @@ class Product extends Model
 
 
     public function imgProducts(){
-        return $this->hasOne(ImgProduct::class)->withTimestamps();
+        return $this->hasOne(ImgProduct::class);
     }
 }

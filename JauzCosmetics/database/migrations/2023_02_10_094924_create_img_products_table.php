@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('img_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('url');
+
             $table->foreignId('product_id')->references('id')->on('products');
             $table->timestamps();
         });

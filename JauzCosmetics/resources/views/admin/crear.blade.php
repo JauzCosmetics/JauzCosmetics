@@ -3,8 +3,9 @@
 @section('crear')
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto" action="{{ route('admin.guardar') }}" method="POST">
+            <form class="col-md-9 m-auto" action="{{ route('admin.guardar') }}" method="POST" enctype="multipart/form-data">
                 <h1>Crear un producto</h1>
+
                 @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
                 <input type="text" name="name" placeholder="Nombre del producto" class="form-control mb-2" autofocus>
                 <input type="text" name="price" placeholder="Precio del producto" class="form-control mb-2">
@@ -13,7 +14,7 @@
                 <input type="text" name="description" placeholder="Descripción del producto" class="form-control mb-2">
                 <div class="mb-3 ">
                     {{-- <label for="formFileMultiple" class="form-label"></label> --}}
-                    <input class="form-control" name="img" type="file" id="img" multiple>
+                    <input class="form-control" name="img[]" type="file" id="img" multiple>
                   </div>
                 {{--             <label for="category">Elige una categoría</label>
                 <select id="category" name="category">
