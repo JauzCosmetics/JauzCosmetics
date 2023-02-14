@@ -27,4 +27,9 @@ class Product extends Model
     public static function productos(){
         return DB::table('products')-> orderBy ( 'id' , 'desc' )->limit(3)->get();;
     }
+
+
+    public function imgProducts(){
+        return $this->hasOne(ImgProduct::class);
+    }
 }

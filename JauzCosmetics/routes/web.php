@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImgController;
+use App\Http\Controllers\Imgtroller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShopController;
 
@@ -51,6 +53,11 @@ Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquilla
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 Route::get('/allProducts', [ShopController::class, 'products'])->name('allProducts');
 
+Route::get('/table', [AdminController::class, 'productos'])->name('table');
+
+// Route::get('/table', function () {
+//     return view('table');
+// })->name('table');
 
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */

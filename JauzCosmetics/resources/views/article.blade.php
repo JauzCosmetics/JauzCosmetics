@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-6 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" style="max-width: 526px; max-height: 526px;"
-                            src="./assets/img/maiko.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" style="max-width: 640px; max-height: 526px;"
+                        src="/assets/img/{{$product->id}}/{{$product->id}}_0.jpg" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -31,19 +31,19 @@
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                    src="./assets/img/maiko1.jpg" alt="Product Image 1">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_0.jpg" alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                    src="./assets/img/maiko2.jpg" alt="Product Image 2">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_1.jpg" alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                    src="./assets/img/maiko3.jpg" alt="Product Image 3">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_2.jpg" alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -56,19 +56,19 @@
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                    src="./assets/img/maiko4.jpg" alt="Product Image 4">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_3.jpg" alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                    src="./assets/img/maiko5.jpg" alt="Product Image 5">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_4.jpg" alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                    src="./assets/img/maiko6.jpg" alt="Product Image 6">
+                                                src="/assets/img/{{$product->id}}/{{$product->id}}_5.jpg" alt="Product Image 6">
                                             </a>
                                         </div>
                                     </div>
@@ -128,5 +128,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 @endsection

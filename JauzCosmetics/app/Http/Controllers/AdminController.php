@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ImgProduct;
 use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -42,14 +44,27 @@ class AdminController extends Controller
             $newProduct->price = $request->price;
             $newProduct->stock = $request->stock;
             $newProduct->description = $request->description;
-            //$newProduct -> fotosProd = $request -> fotosProd;
-            //$newProduct -> category_id = $request -> category_id;
+            $newProduct->category = $request->category;
             $newProduct->save();
+
+            $i = 0;
+            foreach ($request->img as $imagen) {
+              $img= new ImgProduct();
+
+              $imageName =$newProduct -> id.'_'.$i.'.'.$imagen->extension();
+              $img->name = $imageName;
+              $imagen->move(public_path('assets/img/'.$newProduct->id), $imageName);
+              $img->product_id = $newProduct->id;
+              $img->save();
+              $i++;
+           }
+
             return back()->with('mensaje', 'Producto agregado exitosamente');
         } else {
             $errors = $request->errors();
             return back()->with('errors', $errors);
         }
+
     }
     public function editar($id)
     {
@@ -71,6 +86,7 @@ class AdminController extends Controller
 
         if (!$errors) {
             $updateProduct = Product::findOrFail($id);
+
             $updateProduct->name = $request->name;
             $updateProduct->price = $request->price;
             $updateProduct->stock = $request->stock;
@@ -83,6 +99,7 @@ class AdminController extends Controller
             $errors = $request->errors();
             return back()->with('errors', $errors);
         }
+
     }
 
     public function eliminar($id)
