@@ -148,7 +148,7 @@
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-cart bgpropio" role="menu">
-                            @guest
+                            @if (!Auth::user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -172,9 +172,8 @@
                                         @csrf
                                         {{ csrf_field() }}
                                     </form>
-
                                 </div>
-                            @endguest
+                            @endif
                         </ul>
                     </div>
                 </div>
