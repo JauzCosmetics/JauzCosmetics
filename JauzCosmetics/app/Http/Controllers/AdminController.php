@@ -106,11 +106,13 @@ class AdminController extends Controller
     {
         $deleteImg = ImgProduct::where('product_id', $id);
         $deleteImg->delete();
-        
+
         $deleteProduct = Product::findOrFail($id);
         $deleteProduct->delete();
 
-        return back()->with('mensaje', 'Producto eliminado');
+      
+
+        return back()->with('sucess', 'Producto eliminado');
     }
 
 

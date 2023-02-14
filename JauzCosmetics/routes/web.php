@@ -28,6 +28,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/about', function () {
+
     return view('about');
 });
 
@@ -45,7 +46,7 @@ Route::get('/cart', function () {
 
 
 Route::get('/index', function () {
-    return view('index');
+
 })->middleware('auth');
 
 

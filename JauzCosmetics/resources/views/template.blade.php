@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
-
+    @notifyCss
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
     <link rel="stylesheet"
@@ -266,4 +266,5 @@
             </a>
         </div>
     </footer>
+    @notifyJs
 @endsection
