@@ -37,16 +37,6 @@ class CartController extends Controller
    
     }
 
-    public function confirmarProducts(){
-        
-        return view('checkout');
-    }
-
-    public function cart(){
-        
-        return view('checkout');
-    }
-
     public function removeitem(Request $request) {
         $product = Product::where('id', $request->id)->firstOrFail();
         Cart::remove([
@@ -58,11 +48,6 @@ class CartController extends Controller
     public function clear(){
         Cart::clear();
         return back()->with('success',"The shopping cart has successfully beed added to the shopping cart!");
-    }
-
-    public function cartContent(){
-        $cartContent = Cart::all();
-        return view('cart', @compact('cartContent'));;
     }
 
 }
