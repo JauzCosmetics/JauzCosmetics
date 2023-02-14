@@ -59,7 +59,7 @@
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <div class="dropdown text-decoration-none">
+                    <div class="dropdown text-decoration-none ">
                         <button
                             class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -146,7 +146,7 @@
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
-                        <ul class="dropdown-menu dropdown-cart bgpropio" role="menu">
+                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-lg-start" role="menu">
                             @guest
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
