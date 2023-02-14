@@ -21,9 +21,8 @@
     <script defer src="{{ URL::asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
     <script defer src="{{ URL::asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="{{ URL::asset('assets/js/custom.js') }}"></script>
-    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
+    <script defer src="{{ URL::asset('assets/js/templatemo.js') }}"></script>
+    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
@@ -60,7 +59,7 @@
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <div class="dropdown text-decoration-none">
+                    <div class="dropdown text-decoration-none ">
                         <button
                             class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -147,7 +146,7 @@
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
-                        <ul class="dropdown-menu dropdown-cart bgpropio" role="menu">
+                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-lg-start" role="menu">
                             @if (!Auth::user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

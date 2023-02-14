@@ -14,4 +14,8 @@ class ImgProduct extends Model
     public function product(){
         return $this->belongsTo(Product::class);
     }
+
+    public static function imagenes($id){
+        return ImgProduct::where('product_id', $id);
+    }
 }

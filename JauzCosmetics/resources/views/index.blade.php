@@ -71,9 +71,9 @@
         <div class="row">
             @foreach ($products as $product)
                 {{-- aquí comienza la carta que genera las novedades a falta de mostrar solo los últimos creados(order by id desc) --}}
-                <div class="col-12 col-md-4 p-5 mt-3 card-body text-center">
-                    <div class="card" style="width: 20rem;">
-                        <img src="./assets/img/maiko.jpg" class="card-img-top" alt="...">
+                <div class="col-12 col-md-4 mb-4  card-body text-center">
+                    <div class="card  h-100">
+                        <img src="./assets/img/{{$product->id}}/{{$product->id}}_0.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="mt-3 mb-3">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->description }}</p>
