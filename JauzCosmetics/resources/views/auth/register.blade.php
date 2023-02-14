@@ -16,12 +16,6 @@
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
 
-                                        {{-- @if (session('mensaje'))
-                    <div class="alert alert-info text-center" role="alert">
-                        <strong>Usuario creado correctamente</strong>
-                    </div>
-                    @endif --}}
-
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw pb-5"></i>
                                             <div class="form-outline flex-fill mb-0">
