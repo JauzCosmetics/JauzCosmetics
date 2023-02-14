@@ -44,20 +44,21 @@ class AdminController extends Controller
             $newProduct->price = $request->price;
             $newProduct->stock = $request->stock;
             $newProduct->description = $request->description;
+            $newProduct->category = $request->category;
             $newProduct->save();
-            
+
             $i = 0;
             foreach ($request->img as $imagen) {
               $img= new ImgProduct();
 
               $imageName =$newProduct -> id.'_'.$i.'.'.$imagen->extension();
               $img->name = $imageName;
-              $imagen->move(public_path('assets/img'.$newProduct->id), $imageName);
+              $imagen->move(public_path('assets/img/'.$newProduct->id), $imageName);
               $img->product_id = $newProduct->id;
               $img->save();
               $i++;
            }
-            
+
             return back()->with('mensaje', 'Producto agregado exitosamente');
         } else {
             $errors = $request->errors();
