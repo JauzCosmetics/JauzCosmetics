@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
+
 class AdminController extends Controller
 {
     public function productos()
@@ -110,9 +111,10 @@ class AdminController extends Controller
         $deleteProduct = Product::findOrFail($id);
         $deleteProduct->delete();
 
-      
 
-        return back()->with('sucess', 'Producto eliminado');
+        notify()->success('Producto eliminado ');
+
+        return back();
     }
 
 
