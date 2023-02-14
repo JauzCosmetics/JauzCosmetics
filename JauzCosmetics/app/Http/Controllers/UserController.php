@@ -20,7 +20,7 @@ class UserController extends Controller
     //     // }
     //     return redirect('/')->with('sucess', 'Acount created succesfully');
     // }
-        
+
 
 /*      public function registrar(Request $request) {
         $request->validate([
@@ -28,8 +28,8 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8|password',
             'rol' => 'required'
-        ]); 
-        
+        ]);
+
         $errors = $request->has('errors');
 
         if (!$errors) {
