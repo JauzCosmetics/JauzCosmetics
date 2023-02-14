@@ -1,5 +1,6 @@
 @extends('template')
 
+
 @section('article')
     <!-- Open Content -->
     <section class="bg-light">
@@ -117,7 +118,7 @@
                                             </button>
                                         </div>
                                         <div class="col d-grid">
-                                            <a href="" type="button"
+                                            <a href="{{ route('allProducts') }}" type="button"
                                                 class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
                                                 value="addcart">Seguir comprando</a>
                                         </div>
@@ -129,5 +130,6 @@
             </div>
         </div>
 
+        <script defer src="{{ URL::asset('assets/js/templatemo.js') }}"></script>
     </section>
 @endsection
