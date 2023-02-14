@@ -147,7 +147,7 @@
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-lg-start" role="menu">
-                            @guest
+                            @if (!Auth::user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -159,6 +159,10 @@
                             @else
                                 <div class="dropdown text-center">
                                     <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                    @if (Auth::user()->rol=='admin')
+                                        <li class="nav-item"><a class="dropdown-item" href="{{ route('table') }}">{{ __('Panel admin') }}</a>
+                                        </li>
+                                     @endif
                                     <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                     </li>
@@ -168,7 +172,7 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </div>
-                            @endguest
+                            @endif
                         </ul>
                     </div>
                 </div>
