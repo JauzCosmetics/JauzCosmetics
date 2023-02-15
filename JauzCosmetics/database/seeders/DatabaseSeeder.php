@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $name = ['Kit Maiko','Colorete','Pintalabios','Sombra de ojos','Rimel','Eyeliner'];
-        $price = [30.45,10.79,5.95,8.90,25.60,3.50];
-        $stock = [10,4,8,3,2,1];
-        $description = ['Conjunto de productos Maiko','Colorete con tonalidad oscura','Pintalabios rojo intenso','Para estar modo panda','Dura el día entero','Precisión a la hora de hacerte el rabillo'];
-        $category = ['Accesorio','Maquillaje','Maquillaje','Maquillaje','Maquillaje','Maquillaje'];
+        $name = ['Kit Maiko','Colorete','Pintalabios'];
+        $price = [30.45,10.79,5.95];
+        $stock = [10,4,8];
+        $description = ['Conjunto de productos Maiko','Colorete con tonalidad oscura','Pintalabios rojo intenso'];
+        $category = ['Accesorio','Maquillaje','Maquillaje'];
 
 
         $tamaño = sizeof($name);
@@ -34,7 +34,6 @@ class DatabaseSeeder extends Seeder
                 'category' => $category[$i]
             ]);
         }
-
 
         for ($i = 0; $i < $tamaño; $i++) {
 
