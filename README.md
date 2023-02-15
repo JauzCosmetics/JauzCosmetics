@@ -1,5 +1,9 @@
 ### Hi there 👋
 
+Para migrar la base de datos y rellenarla de datos: <br>
+  php artisan migrate <br>
+  php artisan db:seed <br>
+
 Abrir 2 server: <br>
   php artisan serve <br>
   npm run dev
