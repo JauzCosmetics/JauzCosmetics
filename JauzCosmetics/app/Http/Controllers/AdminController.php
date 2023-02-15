@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
+
 class AdminController extends Controller
 {
     public function productos()
@@ -16,10 +17,10 @@ class AdminController extends Controller
         return view('table', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
-    public function usuario()
+    public function usuarios()
     {
         $users = User::all(); // Nos saca todos los productos de la BBDD
-        return view('table', @compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('admin.users', @compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function crear()
@@ -64,8 +65,8 @@ class AdminController extends Controller
             $errors = $request->errors();
             return back()->with('errors', $errors);
         }
-
     }
+
     public function editar($id)
     {
         $product = Product::findOrFail($id);
@@ -104,10 +105,62 @@ class AdminController extends Controller
 
     public function eliminar($id)
     {
+        $deleteImg = ImgProduct::where('product_id', $id);
+        $deleteImg->delete();
+
+        $deleteProduct = Product::findOrFail($id);
+        $deleteProduct->delete();
+
+
+        notify()->success('Producto eliminado ');
+
+        return back();
+    }
+
+
+    public function editarUser($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.editarUser', @compact('user'));
+    }
+
+    public function actualizarUser(Request $request, $id)
+    {
+        $request->validate([
+            'username' => 'required|min:4',
+            'email' => 'required|email',
+            'password' => 'required|password',
+            'rol' => 'required'
+        ]);
+
+        $errors = $request->has('errors');
+
+
+        if (!$errors) {
+            $updateUser = User::findOrFail($id);
+
+            $updateUser->name = $request->name;
+            $updateUser->price = $request->price;
+            $updateUser->stock = $request->stock;
+            $updateUser->description = $request->description;
+            /*          $updateProduct -> fotosProd = $request -> fotosProd;
+                $updateProduct -> category_id = $request -> category_id;  */
+            $updateUser->save();
+            return back()->with('mensaje', 'Producto actualizado');
+        } else {
+            $errors = $request->errors();
+            return back()->with('errors', $errors);
+        }
+
+    }
+
+    public function eliminarUser($id)
+    {
         $deleteProduct = Product::findOrFail($id);
         $deleteProduct->delete();
         return back()->with('mensaje', 'Producto eliminado');
     }
+
 
     public function maquillaje()
     {

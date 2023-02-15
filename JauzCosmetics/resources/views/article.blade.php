@@ -1,14 +1,16 @@
 @extends('template')
 
+
 @section('article')
     <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
-                <div class="col-lg-6 mt-5">
+                <div class="col-lg-6 mt-5 p-lg-5">
                     <div class="card mb-3">
                         <img class="card-img img-fluid" style="max-width: 640px; max-height: 526px;"
-                        src="/assets/img/{{$product->id}}/{{$product->id}}_0.jpg" alt="Card image cap" id="product-detail">
+                            src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" alt="Card image cap"
+                            id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -20,7 +22,7 @@
                         </div>
                         <!--End Controls-->
                         <!--Start Carousel Wrapper-->
-                        <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item"
+                        <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item "
                             data-bs-ride="carousel">
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
@@ -30,20 +32,23 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_0.jpg" alt="Product Image 1">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg"
+                                                    alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_1.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_1.jpg"
+                                                    alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_2.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_2.jpg"
+                                                    alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -55,20 +60,23 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_3.jpg" alt="Product Image 4">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_3.jpg"
+                                                    alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_4.jpg" alt="Product Image 5">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_4.jpg"
+                                                    alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" style="width: 120px; height: 120px;"
-                                                src="/assets/img/{{$product->id}}/{{$product->id}}_5.jpg" alt="Product Image 6">
+                                                <img class="card-img img-fluid" style="max-width: 120px; max-height: 110px;"
+                                                    src="/assets/img/{{ $product->id }}/{{ $product->id }}_5.jpg"
+                                                    alt="Product Image 6">
                                             </a>
                                         </div>
                                     </div>
@@ -90,18 +98,21 @@
                     </div>
                 </div>
                 <!-- col end -->
-                <div class="col-lg-6 mt-5">
+                <div class="col-lg-6 mt-5 p-lg-5">
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">{{ $product->name }}</h1>
                             <p class="h3 py-2">{{ $product->price }}€</p>
                             <ul class="list-inline">
-                                <li class="list-inline-item">
+                                <li>
+                                    <h6>Producto:</h6>
                                     <p class="text-muted"><strong>{{ $product->category }}</strong></p>
                                 </li>
+                                <li>
+                                    <h6>Descripción:</h6>
+                                    <p>{{ $product->description }}</p>
+                                </li>
                             </ul>
-                            <h6>Descripción:</h6>
-                            <p>{{ $product->description }}</p>
 
                             <form action="" method="POST">
 
@@ -117,7 +128,7 @@
                                             </button>
                                         </div>
                                         <div class="col d-grid">
-                                            <a href="" type="button"
+                                            <a href="{{ route('allProducts') }}" type="button"
                                                 class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
                                                 value="addcart">Seguir comprando</a>
                                         </div>
@@ -129,5 +140,6 @@
             </div>
         </div>
 
+        <script defer src="{{ URL::asset('assets/js/templatemo.js') }}"></script>
     </section>
 @endsection

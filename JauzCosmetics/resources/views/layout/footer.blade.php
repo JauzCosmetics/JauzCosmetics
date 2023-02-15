@@ -6,4 +6,6 @@
           </div>
         </div>
       </footer>
+      @notifyJs
+    <x:notify-messages />
       <!-- End of Footer -->
