@@ -20,8 +20,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Cart::class)->withTimestamps();
     }
 
-    public function adress(){
-        return $this->hasMany(Adress::class)->withTimestamps();
+    public function address(){
+        return $this->hasMany(Address::class)->withTimestamps();
     }
     /**
      * The attributes that are mass assignable.
