@@ -14,6 +14,7 @@ class ShopController extends Controller
     }
     public function accesorio()
     {
+
         $products = Product::accesorio(1); // Nos saca todos los productos de la BBDD
         $category = 'accesorio';
         return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
@@ -21,6 +22,7 @@ class ShopController extends Controller
 
     public function products()
     {
+        
         $products = Product::allProducts(2);
         $category = 'allProducts';
         return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos

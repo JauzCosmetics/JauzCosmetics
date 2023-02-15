@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 
+
 class AdminController extends Controller
 {
     public function productos()
@@ -104,10 +105,18 @@ class AdminController extends Controller
 
     public function eliminar($id)
     {
+        $deleteImg = ImgProduct::where('product_id', $id);
+        $deleteImg->delete();
+
         $deleteProduct = Product::findOrFail($id);
         $deleteProduct->delete();
-        return back()->with('mensaje', 'Producto eliminado');
+
+
+        notify()->success('Producto eliminado ');
+
+        return back();
     }
+
 
     public function editarUser($id)
     {
@@ -151,6 +160,7 @@ class AdminController extends Controller
         $deleteProduct->delete();
         return back()->with('mensaje', 'Producto eliminado');
     }
+
 
     public function maquillaje()
     {

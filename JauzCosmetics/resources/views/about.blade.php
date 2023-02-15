@@ -1,6 +1,8 @@
 @extends('template')
 
 @section('about')
+
+
     <section class="bgpropio py-5">
         <div class="container">
             <div class="row align-items-center py-5">
