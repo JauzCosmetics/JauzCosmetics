@@ -58,6 +58,8 @@ Con prefix tomará */
 
     Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
         Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+        
+        Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
 
         Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
         Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
