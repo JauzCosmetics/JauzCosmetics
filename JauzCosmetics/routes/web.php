@@ -54,12 +54,6 @@ Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquilla
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 Route::get('/allProducts', [ShopController::class, 'products'])->name('allProducts');
 
-Route::get('/table', [AdminController::class, 'productos'])->name('table');
-
-// Route::get('/table', function () {
-//     return view('table');
-// })->name('table');
-
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
