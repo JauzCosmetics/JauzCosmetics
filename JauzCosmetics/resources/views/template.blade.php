@@ -145,7 +145,7 @@
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-user text-secondary mr-3"></i>
                         </button>
-                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-lg-start" role="menu">
+                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-start" role="menu">
                             @if (!Auth::user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

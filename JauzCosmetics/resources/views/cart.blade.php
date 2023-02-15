@@ -68,8 +68,8 @@
                     </div>
 
                     <div class="card mb-4 mb-lg-0">
-                        <div class="card-body">
-                            <p><strong>Aceptamos</strong></p>
+                        <div class="card-body d-flex">
+                            <p class="px-2"><strong>Aceptamos</strong></p>
                             <img class="me-2" width="45px"
                                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                                 alt="Visa" />
