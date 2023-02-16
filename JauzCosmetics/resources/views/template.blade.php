@@ -134,7 +134,7 @@
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />
                             <li class=" text-center">
-                                <a class="text-dark" href="{{ route('cart') }}">Ver carrito</a>
+                                <a class="text-dark" href="{{ route('cart.details') }}">Ver carrito</a>
                             </li>
                         </ul>
                         {{-- aquí termina --}}
