@@ -11,7 +11,7 @@ class Cart extends Model
 
     public function users(){
         
-        return $this->hasOne(User::class)->withTimestamps();
+        return $this->hasOne(User::class);
 
     }
 
@@ -19,4 +19,5 @@ class Cart extends Model
     {
         return $this->belongsToMany(Product::class)->withTimestamps();
     }
+
 }
