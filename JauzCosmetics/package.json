@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@jkryszto/mdb-for-laravel": "^1.0.0",
+        "bootstrap-icons": "^1.10.3",
         "mdb-ui-kit": "^6.1.0"
     }
 }

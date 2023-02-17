@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,12 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('address_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('address_id')->references('id')->on('addresses');
-            $table->timestamps();
-        });
+        DB::unprepared('CREATE TRIGGER add_cart AFTER INSERT ON `USERS` FOR EACH ROW
+        BEGIN
+            INSERT INTO `carts` SET user_id = NEW.id, created_at = NEW.created_at, updated_at = NEW.updated_at;
+        END');
     }
 
     /**
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address_user');
+        DB::unprepared('DROP TRIGGER `add_cart`');
     }
 };

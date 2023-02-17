@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ImgController;
 use App\Http\Controllers\Imgtroller;
 use App\Http\Controllers\UserController;
@@ -22,6 +23,8 @@ use App\Http\Controllers\ShopController;
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
+Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
+// Route::post('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -39,14 +42,16 @@ Route::get('/admin/editar', function () {
     return view('admin/editar');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
+// Route::get('/cart', function () {
+//     return view('cart');
+// })->name('cart');
 
-
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 
 Route::get('/index', function () {
-
+    return view('index');
 })->middleware('auth');
 
 
@@ -54,12 +59,15 @@ Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquilla
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 Route::get('/allProducts', [ShopController::class, 'products'])->name('allProducts');
 
+
+Route::get('table', [AdminController::class, 'productos'])->name('table');
+
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
     Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
         Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
-        
+
         Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
 
         Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
@@ -69,4 +77,9 @@ Con prefix tomará */
         Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
 
         Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+    });
+
+    Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
+        Route::get('', [ CartController::class, 'showCart' ]) -> name('cart.details');
+       // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
     });
