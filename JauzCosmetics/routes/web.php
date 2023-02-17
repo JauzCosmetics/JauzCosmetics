@@ -51,7 +51,7 @@ Route::get('/profile', function () {
 })->name('profile');
 
 Route::get('/index', function () {
-
+    return view('index');
 })->middleware('auth');
 
 
@@ -67,7 +67,7 @@ Con prefix tomará */
 
     Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
         Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
-        
+
         Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
 
         Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
