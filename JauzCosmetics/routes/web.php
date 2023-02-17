@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ImgController;
 use App\Http\Controllers\Imgtroller;
 use App\Http\Controllers\UserController;
@@ -23,6 +24,9 @@ Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
 
+Route::get('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+// Route::post('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -39,9 +43,9 @@ Route::get('/admin/editar', function () {
     return view('admin/editar');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
+// Route::get('/cart', function () {
+//     return view('cart');
+// })->name('cart');
 
 
 
