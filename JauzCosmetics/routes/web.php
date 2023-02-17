@@ -23,8 +23,7 @@ use App\Http\Controllers\ShopController;
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
-
-Route::get('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
 // Route::post('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
 
 Route::get('/contact', function () {
@@ -76,4 +75,9 @@ Con prefix tomará */
         Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
 
         Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+    });
+
+    Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
+        Route::get('', [ CartController::class, 'showCart' ]) -> name('cart.details');
+       // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
     });
