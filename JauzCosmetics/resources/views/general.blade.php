@@ -26,6 +26,7 @@
         @yield('cart')
         @yield('login')
         @yield('register')
+        @yield('profile')
         @yield('footer')
     {{-- </div> --}}
 </body>
