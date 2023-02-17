@@ -115,16 +115,16 @@
                                 </li>
                             </ul>
 
-                            <form action="" method="POST">
-
-
-                                <form action="" method="POST">
-                                    <input type="hidden" name="product-title" value="Activewear">
-
                                     <div class="row pb-3">
                                         <div class="col d-grid">
-                                            <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg"
-                                                name="submit" value="viewCart">
+{{--                                             <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg"
+                                                name="submit" value="viewCart"> --}}
+                                                <form action="{{ route('cart.addProduct')}}" method="POST" class="row justify-content-center">
+                                                    <input type='number' name="product_id" value="{{$product->id}}" hidden>
+                                                    @method('POST')
+                                                    @csrf
+                                                    <button class="btn btn-danger" type="submit"><i class="bi bi-trash"></i></button>
+                                                </form>
                                                 <p class="m-0">Añadir al carrito</p>
                                             </button>
                                         </div>
