@@ -43,7 +43,10 @@
                 <img src="./assets/img/banner/banner2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/banner/banner3.jpg" class="d-block w-100" alt="...">
+                <img src="./assets/img/banner/banner4.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/banner/banner5.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel"
@@ -75,9 +78,8 @@
                     <img src="./assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" class="card-img-top"
                         alt="...">
                     <div class="card-body text-center">
-                        <h5 class="mt-3 mb-3">{{ $product->name }}</h5>
-                        <p class="card-text">{{ $product->description }}</p>
-                        <p><a href="{{ route('article.details', $product->id) }}" class="btn bgpropio text-white">Ver más</a></p>
+                        <strong><h5 class="mt-3 mb-3">{{ $product->name }}</h5></strong>
+                        <p><a href="{{ route('article.details', $product->id) }}" class="btn bgpropio mt-3 text-white">Ver más</a></p>
                     </div>
                 </div>
                 {{-- aquí termina la carta --}}
