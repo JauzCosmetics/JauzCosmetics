@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->integer('stock');
-            $table->string('description');
-            $table->enum('category',['maquillaje','accesorio']);
+            $table->text('description');
+            $table->enum('category',['Maquillaje','Accesorio']);
             $table->timestamps();
         });
     }

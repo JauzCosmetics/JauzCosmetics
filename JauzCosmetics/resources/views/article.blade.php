@@ -102,14 +102,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">{{ $product->name }}</h1>
-                            <p class="h3 py-2">{{ $product->price }}€</p>
+                            <h6>Precio:</h6>
+                           <strong><h1 class="h2 py-2">{{ $product->price }}€</h1></strong>
                             <ul class="list-inline">
                                 <li>
                                     <h6>Producto:</h6>
                                     <p class="text-muted"><strong>{{ $product->category }}</strong></p>
                                 </li>
-                                <li>
-                                    <h6>Descripción:</h6>
+                                <li class="pb-3">
+                                    <h6 class="pt-2 pb-2"><strong>Descripción:</strong></h6>
                                     <p>{{ $product->description }}</p>
                                 </li>
                             </ul>

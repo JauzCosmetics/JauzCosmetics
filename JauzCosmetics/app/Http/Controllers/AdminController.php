@@ -164,13 +164,13 @@ class AdminController extends Controller
 
     public function maquillaje()
     {
-        $products = Product::maquillaje(3); // Nos saca todos los productos de la BBDD
+        $products = Product::maquillaje(6); // Nos saca todos los productos de la BBDD
         $category = 'maquillaje';
         return view('table', @compact('products', 'category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
     public function accesorio()
     {
-        $products = Product::all()->accesorio(1); // Nos saca todos los productos de la BBDD
+        $products = Product::accesorio(6); // Nos saca todos los productos de la BBDD
         $category = 'accesorio';
         return view('table', @compact('products', 'category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }

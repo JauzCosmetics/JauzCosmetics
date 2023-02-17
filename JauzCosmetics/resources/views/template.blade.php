@@ -60,9 +60,9 @@
                 <div class="navbar align-self-center d-flex">
                     <div class="dropdown text-decoration-none ">
                         <button
-                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            class="nav-icon position-relative text-decoration-none btn nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-cart-arrow-down text-secondary mr-1"></i>
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                             <span
                                 class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                         </button>
@@ -141,9 +141,9 @@
                     </div>
                     <div class="dropdown text-decoration-none ">
                         <button
-                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            class="nav-icon position-relative text-decoration-none btnnav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-user text-secondary mr-3"></i>
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-start" role="menu">
                             @if (!Auth::user())
