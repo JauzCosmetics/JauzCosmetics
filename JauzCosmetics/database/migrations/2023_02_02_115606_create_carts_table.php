@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->json('products')->default(new Expression('(JSON_ARRAY())'));
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
 

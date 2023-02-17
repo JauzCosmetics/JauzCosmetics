@@ -1,6 +1,8 @@
 @extends('template')
 
 @section('cart')
+
+{{-- {{count($products)}} --}}
     <section class=" gradient-custom">
         <div class="container py-5">
             <div class="row d-flex justify-content-center my-4">
@@ -11,6 +13,7 @@
                         </div>
                         <div class="card-body pb-0">
                             <!-- Single item -->
+                            {{-- for --}}
                             <div class="row">
                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                     <!-- Image -->
@@ -62,14 +65,15 @@
                             <!-- Single item -->
 
                             <hr class="my-4" />
+                            {{-- end for --}}
 
                         </div>
 
                     </div>
 
                     <div class="card mb-4 mb-lg-0">
-                        <div class="card-body">
-                            <p><strong>Aceptamos</strong></p>
+                        <div class="card-body d-flex">
+                            <p class="px-2"><strong>Aceptamos</strong></p>
                             <img class="me-2" width="45px"
                                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                                 alt="Visa" />

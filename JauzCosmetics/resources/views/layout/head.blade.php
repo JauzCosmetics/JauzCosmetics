@@ -5,7 +5,7 @@
 <meta name="author" content="">
 
 <title>Panel Administrador</title>
-
+@notifyCss
 <link href="{{URL::asset('assets/dashboard/css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{URL::asset('assets/dashboard/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{URL::asset('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
@@ -13,4 +13,5 @@
 <script defer src="{{URL::asset('assets/dashboard/js/sb-admin-2.min.js')}}"></script>
 <script defer src="{{URL::asset('assets/dashboard/js/demo/chart-area-demo.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 

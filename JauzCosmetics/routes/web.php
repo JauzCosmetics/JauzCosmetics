@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ImgController;
 use App\Http\Controllers\Imgtroller;
 use App\Http\Controllers\UserController;
@@ -23,11 +24,15 @@ Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
 
+Route::get('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+// Route::post('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
 Route::get('/about', function () {
+
     return view('about');
 });
 
@@ -38,16 +43,16 @@ Route::get('/admin/editar', function () {
     return view('admin/editar');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
+// Route::get('/cart', function () {
+//     return view('cart');
+// })->name('cart');
 
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
 Route::get('/index', function () {
-    return view('index');
+
 })->middleware('auth');
 
 
@@ -63,6 +68,8 @@ Con prefix tomará */
 
     Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
         Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+        
+        Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
 
         Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
         Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
