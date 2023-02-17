@@ -42,7 +42,9 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
-
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 
 Route::get('/index', function () {
     return view('index');

@@ -158,7 +158,8 @@
                                 @endif
                             @else
                                 <div class="dropdown text-center">
-                                    <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                    <li class="nav-item"><a class="dropdown-item" href="{{ route('profile') }}">{{ Auth::user()->username }}</a>
+                                    </li>
                                     @if (Auth::user()->rol=='admin')
                                         <li class="nav-item"><a class="dropdown-item" href="{{ route('table') }}">{{ __('Panel admin') }}</a>
                                         </li>
