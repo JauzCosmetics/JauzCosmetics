@@ -11,12 +11,13 @@ class Cart extends Model
 
     public function users(){
         
-        return $this->hasOne(User::class)->withTimestamps();
+        return $this->hasOne(User::class);
 
     }
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)->withTimestamps();
+        return $this->belongsToMany(Product::class, 'product_cart')->withTimestamps();
     }
+
 }

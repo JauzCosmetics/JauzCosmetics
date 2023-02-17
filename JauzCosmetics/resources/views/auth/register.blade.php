@@ -59,6 +59,7 @@
                                                     class="col-md-4 col-form-label text-md-right">{{ __('Confirma tu contraseña') }}</label>
                                             </div>
                                         </div>
+                                        {{--  --}}
 
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

@@ -134,7 +134,7 @@
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />
                             <li class=" text-center">
-                                <a class="text-dark" href="{{ route('cart') }}">Ver carrito</a>
+                                <a class="text-dark" href="{{ route('cart.details') }}">Ver carrito</a>
                             </li>
                         </ul>
                         {{-- aquí termina --}}
@@ -157,7 +157,8 @@
                                 @endif
                             @else
                                 <div class="dropdown text-center">
-                                    <p class=" text-white pt-2">{{ Auth::user()->username }}</p>
+                                    <li class="nav-item"><a class="dropdown-item" href="{{ route('profile') }}">{{ Auth::user()->username }}</a>
+                                    </li>
                                     @if (Auth::user()->rol=='admin')
                                         <li class="nav-item"><a class="dropdown-item" href="{{ route('table') }}">{{ __('Panel admin') }}</a>
                                         </li>
