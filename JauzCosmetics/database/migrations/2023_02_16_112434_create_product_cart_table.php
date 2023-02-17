@@ -19,7 +19,7 @@ return new class extends Migration
             $table->boolean('status')->nullable();
             $table->foreignId('product_id')->references('id')->on('products');
             $table->foreignId('cart_id')->references('id')->on('carts');
-           //TODO: $table->unique('cart_id','product_id');
+            //$table->unique('cart_id','product_id');
             $table->timestamps();
         });
     }
