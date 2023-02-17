@@ -14,9 +14,8 @@ class CartController extends Controller
     public function showCart()
     {
         $user = User::find(Auth::id());
-        // $products=$user->cart->products;
-        // return view('cart', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-        return view('cart');
+        $products=$user->cart->products;
+        return view('cart', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function addProduct(Request $request){
@@ -25,7 +24,7 @@ class CartController extends Controller
         $cart=$user->cart;
         $product = Product::find($request->product_id);
 
-        $cart->products->attach($product->id);
+        $cart->products()->attach(1);
         
         return back()->with('success',"$product->nombre ¡se ha agregado con éxito al carrito!");
    
