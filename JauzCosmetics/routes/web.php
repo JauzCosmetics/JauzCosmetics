@@ -47,7 +47,9 @@ Route::get('/admin/editar', function () {
 //     return view('cart');
 // })->name('cart');
 
-
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 
 Route::get('/index', function () {
 
