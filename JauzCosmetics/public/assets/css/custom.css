@@ -88,6 +88,10 @@
     margin-top: 150px;
 }
 
+span{
+    font-size: 11px;
+}
+
 /*
 @media (min-width: 768px)
 {
