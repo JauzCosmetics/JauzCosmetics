@@ -105,7 +105,7 @@
                                 <li
                                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Productos
-                                    <span>$53.98</span>
+                                    {{-- <span>{{ route('cart.precioTotal') }}</span> --}}
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     Envío

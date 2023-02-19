@@ -76,16 +76,16 @@
                                 <span class="item">
                                     <div class="d-flex">
                                     <span class="item-left">
-                                        <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg"
-                                        alt="" style="width: 50px"/>
+                                        {{-- <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" --}}
+                                        {{-- alt="" style="width: 50px"/> --}}
                                         <span class="item-info">
-                                            <span>{{ $product->name }}</span>
-                                            <span>{{ $product->price }}€</span>
+                                            {{-- <span>{{ $product->name }}</span> --}}
+                                            {{-- <span>{{ $product->price }}€</span> --}}
                                         </span>
                                     </span>
                                     <span class="item-right">
-                                        <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
-                                            class="justify-content-center">
+                                        {{-- <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
+                                            class="justify-content-center"> --}}
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn text-white btn-danger btn-sm me-1 mb-2"
