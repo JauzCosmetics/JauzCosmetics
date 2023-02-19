@@ -10,7 +10,7 @@
             <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
-        
+
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -26,9 +26,7 @@
                                 <td>Name</td>
                                 <td>Price</td>
                                 <td>Stock</td>
-                                <td>Description</td>
                                 <td>Category</td>
-                                <td>Imágenes</td>
                                 <td>Editar</td>
                                 <td>Eliminar</td>
                         </thead>
@@ -38,9 +36,7 @@
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->stock }}</td>
-                                <td>{{ $product->description }}</td>
                                 <td>{{ $product->category }}</td>
-                                <td>{{ $product->fotosProd }}</td>
                                 <td><a href="{{ route('admin.editar', $product->id) }}"
                                         class="row justify-content-center"><button class="btn btn-primary" type="submit"><i
                                                 class="bi bi-pencil"></i></button></a></td>
@@ -59,7 +55,7 @@
                     </table>
 
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center text-center">
                     <div class="col-2">
                         <a href="{{ route('admin.crear') }}">
                             <button class="btn btn-primary" type="submit">Crear</button></h3></a>
