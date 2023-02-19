@@ -29,6 +29,8 @@ Route::get('/template', [CartController::class, 'showCart'])->name('showCart');
 
 Route::get('/article/{id?}', [ShopController::class, 'detalle'])->name('article.details');
 Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
+Route::post('/article/{id?}',  [CartController::class, 'precioTotal'])->name('cart.precioTotal');
+Route::get('/cart', [CartController::class, 'precioTotal'])->name('cart.precioTotal');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -81,6 +83,7 @@ Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->g
 
 Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
     Route::get('', [CartController::class, 'showCart'])->name('cart.details');
+    Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
     Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
     // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
 });

@@ -52,4 +52,16 @@ class CartController extends Controller
         Cart::clear();
         return back()->with('success',"The shopping cart has successfully beed added to the shopping cart!");
     }
+
+/*     public function precioTotal(Request $request){
+       
+        $user = User::find(Auth::id());
+        $cart=$user->cart;
+        $productPrice = Product::find($request->price);
+
+        $totalPrice += $productPrice*($request->amount);
+        
+        return view('cart', @compact('totalPrice'));
+   
+    } */
 }
