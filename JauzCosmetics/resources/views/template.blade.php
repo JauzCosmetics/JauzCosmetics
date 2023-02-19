@@ -66,70 +66,38 @@
                                 class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                         </button>
                         {{-- aqui emplieza el dropdown de cart --}}
+
+                        {{-- @foreach ($products as $product) --}}
+                            
                         {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
                         <ul class="dropdown-menu dropdown-cart" role="menu">
                             <li>
                                 <span class="item">
+                                    <div class="d-flex">
                                     <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_1.jpg"
-                                            alt="" />
+                                        {{-- <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" --}}
+                                        {{-- alt="" style="width: 50px"/> --}}
                                         <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 27$</span>
+                                            {{-- <span>{{ $product->name }}</span> --}}
+                                            {{-- <span>{{ $product->price }}€</span> --}}
                                         </span>
                                     </span>
                                     <span class="item-right">
-
-                                        <button class="btn btn-danger fas fa-trash"></button>
+                                        {{-- <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
+                                            class="justify-content-center"> --}}
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn text-white btn-danger btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip" title="Remove item">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        </form>
                                     </span>
+                                    </div>
                                 </span>
                             </li>
+                            {{-- @endforeach --}}
                             {{-- hasta aquí el foreach ------------------------------------------------------------------------------------ --}}
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_2.jpg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 3$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_3.jpeg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 12$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger  fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_4.jpg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 7$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger  fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />
                             <li class=" text-center">
