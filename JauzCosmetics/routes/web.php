@@ -20,11 +20,17 @@ use App\Http\Controllers\ShopController;
 */
 
 
+
+
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
-Route::get('/article/{id?}', [ ShopController::class, 'detalle' ]) -> name('article.details');
+Route::get('/template', [CartController::class, 'showCart'])->name('showCart');
+// Route::get('/', [CartController::class, 'navCart'])->name('template');
+
+Route::get('/article/{id?}', [ShopController::class, 'detalle'])->name('article.details');
 Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
-// Route::post('/cart', [ CartController::class, 'showCart' ]) -> name('cart.details');
+// Route::post('/article/{id?}',  [CartController::class, 'precioTotal'])->name('cart.precioTotal');
+// Route::get('/cart', [CartController::class, 'precioTotal'])->name('cart.precioTotal');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -41,10 +47,6 @@ Route::get('/admin/crear', function () {
 Route::get('/admin/editar', function () {
     return view('admin/editar');
 });
-
-// Route::get('/cart', function () {
-//     return view('cart');
-// })->name('cart');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -65,21 +67,24 @@ Route::get('table', [AdminController::class, 'productos'])->name('table');
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
-    Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
-        Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
+Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
+    Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
 
-        Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
+    Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
 
-        Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
-        Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
+    Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
+    Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');
 
-        Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
-        Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
+    Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
+    Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
 
-        Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
-    });
+    Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+});
 
-    Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
-        Route::get('', [ CartController::class, 'showCart' ]) -> name('cart.details');
-       // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
-    });
+Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
+    Route::get('', [CartController::class, 'showCart'])->name('cart.details');
+    Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
+    Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
+    // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
+});
+

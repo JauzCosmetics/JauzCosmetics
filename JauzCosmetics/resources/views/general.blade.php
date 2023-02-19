@@ -21,7 +21,6 @@
         @yield('editar')
         @yield('products')
         @yield('contact')
-        @yield('adminTable')
         @yield('about')
         @yield('cart')
         @yield('login')

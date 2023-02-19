@@ -51,7 +51,8 @@
                         <div class="col-md-4">
                             <div class="card mb-4 product-wap rounded-0">
                                 <div class="card rounded-0">
-                                    <img class="card-img rounded-0 img-fluid"  src="/assets/img/{{$product->id}}/{{$product->id}}_0.jpg">
+                                    <img class="card-img rounded-0 img-fluid"
+                                        src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg">
                                     <div
                                         class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                         <ul class="list-unstyled">
@@ -59,8 +60,14 @@
                                             <li><a class="btn bgpropio text-white mt-2"
                                                     href="{{ route('article.details', $product->id) }}"><i
                                                         class="far fa-eye"></i></a></li>
-                                            <li><a class="btn bgpropio text-white mt-2" href="shop-single.html"><i
-                                                        class="fas fa-cart-plus"></i></a></li>
+                                            <form action="{{ route('cart.addProduct', $product->id) }}" method="POST"
+                                                class="row justify-content-center">
+                                                <input type='number' name="product_id" value="{{ $product->id }}" hidden>
+                                                @method('POST')
+                                                @csrf
+                                               <li><button class="btn bgpropio text-white mt-2 text-decoration-none"
+                                                    type="submit"><i class="fas fa-cart-plus"></i></button>
+                                            </form></li>
                                         </ul>
                                     </div>
                                 </div>
