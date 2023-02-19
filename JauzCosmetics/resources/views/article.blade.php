@@ -116,16 +116,15 @@
                                     <p>{{ $product->description }}</p>
                                 </li>
                             </ul>
-
                             <div class="row pb-3">
-                                <div class="col d-grid">
+                                <div class="col d-grid mx-3">
                                     <form action="{{ route('cart.addProduct', $product->id) }}" method="POST"
                                         class="row justify-content-center">
                                         <input type='number' name="product_id" value="{{ $product->id }}" hidden>
                                         @method('POST')
                                         @csrf
                                         <button class="btn bgpropio text-white text-decoration-none btn-lg"
-                                            type="submit">Añadir al carrito<i class="bi bi-trash"></i></button>
+                                            type="submit">Añadir al carrito</button>
                                     </form>
                                 </div>
                                 <div class="col d-grid">
@@ -134,7 +133,6 @@
                                         value="addcart">Seguir comprando</a>
                                 </div>
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
