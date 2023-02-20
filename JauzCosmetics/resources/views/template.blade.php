@@ -64,16 +64,16 @@
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                             <span
-                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{count(Auth::user()->cart->products)}}</span>
                         </button>
                         {{-- aqui emplieza el dropdown de cart --}}
 
-                        
+
                         {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
                         <ul class="dropdown-menu dropdown-cart" role="menu">
                             @if (Auth::user())
                             @foreach (Auth::user()->cart->products as $product)
-                            
+
                             <li>
                                 <span class="item">
                                     <div class="d-flex">
@@ -87,7 +87,7 @@
                                     </span>
                                     <span class="item-right">
                                         <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
-                                            class="justify-content-center"> 
+                                            class="justify-content-center">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn text-white btn-danger btn-sm me-1 mb-2"
