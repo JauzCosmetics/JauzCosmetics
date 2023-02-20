@@ -82,7 +82,6 @@ Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->g
 Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
     Route::get('', [CartController::class, 'showCart'])->name('cart.details');
     Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
-    Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
     // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
 });
 

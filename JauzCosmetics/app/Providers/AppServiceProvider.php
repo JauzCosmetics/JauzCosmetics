@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Cart;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,4 +22,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
 }
