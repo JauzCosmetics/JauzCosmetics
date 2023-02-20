@@ -156,9 +156,9 @@ class AdminController extends Controller
 
     public function eliminarUser($id)
     {
-        $deleteProduct = Product::findOrFail($id);
-        $deleteProduct->delete();
-        return back()->with('mensaje', 'Producto eliminado');
+        $deleteUser = User::findOrFail($id);
+        $deleteUser->delete();
+        return back()->with('mensaje', 'Usuario eliminado');
     }
 
 

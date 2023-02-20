@@ -103,7 +103,9 @@
                         <div class="card-body">
                             <h1 class="h2">{{ $product->name }}</h1>
                             <h6>Precio:</h6>
-                           <strong><h1 class="h2 py-2">{{ $product->price }}€</h1></strong>
+                            <strong>
+                                <h1 class="h2 py-2">{{ $product->price }}€</h1>
+                            </strong>
                             <ul class="list-inline">
                                 <li>
                                     <h6>Producto:</h6>
@@ -114,27 +116,23 @@
                                     <p>{{ $product->description }}</p>
                                 </li>
                             </ul>
-
-                                    <div class="row pb-3">
-                                        <div class="col d-grid">
-{{--                                             <button type="submit" class="btn bgpropio text-white m-0 p-0 btn-lg"
-                                                name="submit" value="viewCart"> --}}
-                                                <form action="{{ route('cart.addProduct')}}" method="POST" class="row justify-content-center">
-                                                    <input type='number' name="product_id" value="{{$product->id}}" hidden>
-                                                    @method('POST')
-                                                    @csrf
-                                                    <button class="btn btn-danger" type="submit"><i class="bi bi-trash"></i></button>
-                                                </form>
-                                                <p class="m-0">Añadir al carrito</p>
-                                            </button>
-                                        </div>
-                                        <div class="col d-grid">
-                                            <a href="{{ route('allProducts') }}" type="button"
-                                                class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
-                                                value="addcart">Seguir comprando</a>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div class="row pb-3">
+                                <div class="col d-grid mx-3">
+                                    <form action="{{ route('cart.addProduct', $product->id) }}" method="POST"
+                                        class="row justify-content-center">
+                                        <input type='number' name="product_id" value="{{ $product->id }}" hidden>
+                                        @method('POST')
+                                        @csrf
+                                        <button class="btn bgpropio text-white text-decoration-none btn-lg"
+                                            type="submit">Añadir al carrito</button>
+                                    </form>
+                                </div>
+                                <div class="col d-grid">
+                                    <a href="{{ route('allProducts') }}" type="button"
+                                        class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
+                                        value="addcart">Seguir comprando</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
