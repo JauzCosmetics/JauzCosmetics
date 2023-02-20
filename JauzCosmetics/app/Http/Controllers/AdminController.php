@@ -50,15 +50,15 @@ class AdminController extends Controller
 
             $i = 0;
             foreach ($request->img as $imagen) {
-              $img= new ImgProduct();
+                $img = new ImgProduct();
 
-              $imageName =$newProduct -> id.'_'.$i.'.'.$imagen->extension();
-              $img->name = $imageName;
-              $imagen->move(public_path('assets/img/'.$newProduct->id), $imageName);
-              $img->product_id = $newProduct->id;
-              $img->save();
-              $i++;
-           }
+                $imageName = $newProduct->id . '_' . $i . '.' . $imagen->extension();
+                $img->name = $imageName;
+                $imagen->move(public_path('assets/img/' . $newProduct->id), $imageName);
+                $img->product_id = $newProduct->id;
+                $img->save();
+                $i++;
+            }
 
             return back()->with('mensaje', 'Producto agregado exitosamente');
         } else {
@@ -100,7 +100,6 @@ class AdminController extends Controller
             $errors = $request->errors();
             return back()->with('errors', $errors);
         }
-
     }
 
     public function eliminar($id)
@@ -151,7 +150,6 @@ class AdminController extends Controller
             $errors = $request->errors();
             return back()->with('errors', $errors);
         }
-
     }
 
     public function eliminarUser($id)

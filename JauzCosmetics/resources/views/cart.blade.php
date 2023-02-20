@@ -1,7 +1,6 @@
 @extends('template')
 
 @section('cart')
-    {{-- {{count($products)}} --}}
     <section class=" gradient-custom">
         <div class="container py-5">
             <div class="row d-flex justify-content-center my-4">
@@ -33,11 +32,11 @@
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn text-white btn-danger btn-sm me-1 mb-2"
-                                            data-mdb-toggle="tooltip" title="Remove item">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
+                                                data-mdb-toggle="tooltip" title="Remove item">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </form>
-    
+
                                         <!-- Data -->
                                     </div>
 
@@ -50,7 +49,7 @@
                                             </button>
 
                                             <div class="form-outline col-4">
-                                                <input id="form1" min="0" name="quantity" value="1"
+                                                <input id="form1" min="1" name="quantity" value="1"
                                                     type="number" class="form-control" />
                                             </div>
 
@@ -63,7 +62,7 @@
 
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
-                                            <strong>Precio de 1 o multi por cantidad elegida</strong>
+                                            <strong>{{ $product->price }}€</strong>
                                         </p>
                                         <!-- Price -->
                                     </div>
@@ -105,7 +104,7 @@
                                 <li
                                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Productos
-                                    {{-- <span>{{ route('cart.precioTotal') }}</span> --}}
+                                    <span>{{ count($products) }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     Envío
@@ -119,7 +118,7 @@
                                             <p class="mb-0">(IVA incluido)</p>
                                         </strong>
                                     </div>
-                                    <span><strong>$53.98</strong></span>
+                                    <span><strong>{{ $total }}€</strong></span>
                                 </li>
                             </ul>
                             <div class="text-white ms-4">

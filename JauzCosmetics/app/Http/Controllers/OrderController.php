@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-/*     public function orderToCart($id){
-        
+    /*     public function orderToCart($id){
+
         $idUser = User::findOrFail($id);
         $order = Cart::where(); // Nos saca todos los productos de la BBDD
-        return view('cart', @compact('products','idUser')); 
+        return view('cart', @compact('products','idUser'));
     } */
 }

@@ -118,14 +118,23 @@
                             </ul>
                             <div class="row pb-3">
                                 <div class="col d-grid mx-3">
-                                    <form action="{{ route('cart.addProduct', $product->id) }}" method="POST"
-                                        class="row justify-content-center">
-                                        <input type='number' name="product_id" value="{{ $product->id }}" hidden>
-                                        @method('POST')
-                                        @csrf
-                                        <button class="btn bgpropio text-white text-decoration-none btn-lg"
-                                            type="submit">Añadir al carrito</button>
-                                    </form>
+
+                                    {{-- comprobamos que esta logueado si NO lo está lo mandamos al login --}}
+                                    @if (!Auth::user())
+                                        <a href="{{ route('login') }}"
+                                            class="btn bgpropio text-white text-decoration-none btn-lg"
+                                            type="submit">Añadir al carrito
+                                        </a>
+                                    @else
+                                        <form action="{{ route('cart.addProduct', $product->id) }}" method="POST"
+                                            class="row justify-content-center">
+                                            <input type='number' name="product_id" value="{{ $product->id }}" hidden>
+                                            @method('POST')
+                                            @csrf
+                                            <button class="btn bgpropio text-white text-decoration-none btn-lg"
+                                                type="submit">Añadir al carrito</button>
+                                        </form>
+                                    @endif
                                 </div>
                                 <div class="col d-grid">
                                     <a href="{{ route('allProducts') }}" type="button"

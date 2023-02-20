@@ -78,8 +78,11 @@
                     <img src="./assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" class="card-img-top"
                         alt="...">
                     <div class="card-body text-center">
-                        <strong><h5 class="mt-3 mb-3">{{ $product->name }}</h5></strong>
-                        <p><a href="{{ route('article.details', $product->id) }}" class="btn bgpropio mt-3 text-white">Ver más</a></p>
+                        <strong>
+                            <h5 class="mt-3 mb-3">{{ $product->name }}</h5>
+                        </strong>
+                        <p><a href="{{ route('article.details', $product->id) }}" class="btn bgpropio mt-3 text-white">Ver
+                                más</a></p>
                     </div>
                 </div>
                 {{-- aquí termina la carta --}}
