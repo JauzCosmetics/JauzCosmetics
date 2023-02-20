@@ -63,8 +63,13 @@
                             class="nav-icon position-relative text-decoration-none btn nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                            @if (Auth::user())
                             <span
-                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{count(Auth::user()->cart->products)}}</span>
+                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">
+
+                                {{count(Auth::user()->cart->products)}}
+                            </span>
+                            @endif
                         </button>
                         {{-- aqui emplieza el dropdown de cart --}}
 
