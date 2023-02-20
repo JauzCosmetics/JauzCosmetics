@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
     @notifyCss
@@ -67,24 +68,24 @@
                         </button>
                         {{-- aqui emplieza el dropdown de cart --}}
 
-                        {{-- @foreach ($products as $product) --}}
-                            
+                        
                         {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
                         <ul class="dropdown-menu dropdown-cart" role="menu">
+                            @foreach ($cartProducts as $product)
                             <li>
                                 <span class="item">
                                     <div class="d-flex">
                                     <span class="item-left">
-                                        {{-- <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg" --}}
-                                        {{-- alt="" style="width: 50px"/> --}}
+                                        <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg"
+                                        alt="" style="width: 50px"/>
                                         <span class="item-info">
-                                            {{-- <span>{{ $product->name }}</span> --}}
-                                            {{-- <span>{{ $product->price }}€</span> --}}
+                                            <span>{{ $product->name }}</span>
+                                            <span>{{ $product->price }}€</span>
                                         </span>
                                     </span>
                                     <span class="item-right">
-                                        {{-- <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
-                                            class="justify-content-center"> --}}
+                                         <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
+                                            class="justify-content-center"> 
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn text-white btn-danger btn-sm me-1 mb-2"
@@ -96,7 +97,7 @@
                                     </div>
                                 </span>
                             </li>
-                            {{-- @endforeach --}}
+                            @endforeach
                             {{-- hasta aquí el foreach ------------------------------------------------------------------------------------ --}}
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />
