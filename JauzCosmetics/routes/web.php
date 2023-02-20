@@ -24,8 +24,7 @@ use App\Http\Controllers\ShopController;
 
 Route::get('/', [ShopController::class, 'productos'])->name('index');
 
-Route::get('/template', [CartController::class, 'showCart'])->name('showCart');
-// Route::get('/', [CartController::class, 'navCart'])->name('template');
+// Route::get('/template', [CartController::class, 'showCart'])->name('showCart');
 
 Route::get('/article/{id?}', [ShopController::class, 'detalle'])->name('article.details');
 Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
