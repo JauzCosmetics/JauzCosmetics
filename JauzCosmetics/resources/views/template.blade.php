@@ -71,7 +71,9 @@
                         
                         {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
                         <ul class="dropdown-menu dropdown-cart" role="menu">
-                            @foreach ($cartProducts as $product)
+                            @if (Auth::user())
+                            @foreach (Auth::user()->cart->products as $product)
+                            
                             <li>
                                 <span class="item">
                                     <div class="d-flex">
@@ -84,7 +86,7 @@
                                         </span>
                                     </span>
                                     <span class="item-right">
-                                         <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
+                                        <form action="{{ route('cart.eliminar', $product->id) }}" method="POST"
                                             class="justify-content-center"> 
                                             @method('DELETE')
                                             @csrf
@@ -98,6 +100,7 @@
                                 </span>
                             </li>
                             @endforeach
+                            @endif
                             {{-- hasta aquí el foreach ------------------------------------------------------------------------------------ --}}
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />

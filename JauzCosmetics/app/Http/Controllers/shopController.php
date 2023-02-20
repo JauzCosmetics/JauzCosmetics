@@ -33,11 +33,9 @@ class ShopController extends Controller
     }
     public function productos()
     {
-        $cart = Cart::where('user_id',Auth::id())->first();
-        $cartProducts = $cart->products;
         $products = Product::productos();
 
-        return view('index', @compact('products','cartProducts')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('index', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function detalle($id)
