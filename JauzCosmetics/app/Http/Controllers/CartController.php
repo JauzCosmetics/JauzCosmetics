@@ -17,13 +17,7 @@ class CartController extends Controller
         $products=$user->cart->products;
         return view('cart', @compact('products')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
-
-    public function navCart()
-    {
-        $user = User::find(Auth::id());
-        $cartProducts = $user->cart->products;
-        return view('index', @compact('cartProducts')); //Compact nos recoge todo los elementos que encontremos en la base de datos
-    }
+    
 
     public function addProduct(Request $request,$id){
        
