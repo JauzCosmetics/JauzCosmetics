@@ -17,7 +17,8 @@ class Cart extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'product_cart')->withTimestamps();
+        //Necesitamos el withPivot para poder acceder al atributo amount.
+        return $this->belongsToMany(Product::class, 'product_cart')->withTimestamps()->withPivot('amount');
     }
 
 }
