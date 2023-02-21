@@ -1,31 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Cart;
 use App\Models\Product;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
 
     public function maquillaje()
     {
-        $products = Product::maquillaje(3); // Nos saca todos los productos de la BBDD
+        $products = Product::maquillaje(6); // Nos saca todos los productos de la BBDD
         $category = 'maquillaje';
-        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('showProducts', @compact('products', 'category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
     public function accesorio()
     {
 
-        $products = Product::accesorio(1); // Nos saca todos los productos de la BBDD
+        $products = Product::accesorio(6); // Nos saca todos los productos de la BBDD
         $category = 'accesorio';
-        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('showProducts', @compact('products', 'category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function products()
     {
-        
-        $products = Product::allProducts(2);
+
+        $products = Product::allProducts(6);
         $category = 'allProducts';
-        return view('showProducts', @compact('products','category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+        return view('showProducts', @compact('products', 'category')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
     public function productos()
     {
@@ -39,5 +43,4 @@ class ShopController extends Controller
         $product = Product::findOrFail($id);
         return view('article', @compact('product')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
-
 }

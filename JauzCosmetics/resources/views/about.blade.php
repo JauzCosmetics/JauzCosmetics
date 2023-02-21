@@ -1,21 +1,18 @@
 @extends('template')
 
 @section('about')
-
-
     <section class="bgpropio py-5">
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
-                    <h1>Sobre nosotros</h1>
+                    <h1 class="pb-3"><strong>Sobre nosotros</strong></h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Dedicados a la venta online de productos cosméticos y accesorios. <br>
+                        Apertura de futuras tiendas físicas a nivel nacional, reclamadas por nuestros clientes.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/img/about-hero.svg" alt="About Hero">
+                    <img src="assets/img/makeup.png" alt="make up">
                 </div>
             </div>
         </div>
@@ -28,10 +25,6 @@
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">¿Dónde estamos?</h1>
-            <p>
-
-                Lorem ipsum dolor sit amet.
-            </p>
         </div>
     </div>
 
@@ -68,9 +61,6 @@
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1">Nuestras marcas</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet.
-                    </p>
                 </div>
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
@@ -83,30 +73,29 @@
                         <!--End Controls-->
 
                         <!--Carousel Wrapper-->
-                        <div class="col">
-                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand"
+                        <div class="col ">
+                            <div class="carousel  slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand"
                                 data-bs-ride="carousel">
                                 <!--Slides-->
-                                <div class="carousel-inner product-links-wap" role="listbox">
+                                <div class="carousel-inner product-links-wap " role="listbox">
 
                                     <!--First slide-->
-                                    <div class="carousel-item active">
+                                    <div class="carousel-item active ">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/mac.png" alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/loreal.png"
+                                                    alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/guerlain.png"
+                                                    alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/gillette.png"
+                                                    alt="Brand Logo">
                                             </div>
                                         </div>
                                     </div>
@@ -116,48 +105,23 @@
                                     <div class="carousel-item">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img pt-4" src="assets/img/clarins.png"
+                                                    alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/dior.png" alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img pt-4" src="assets/img/blender.png"
+                                                    alt="Brand Logo">
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
+                                                <img class="img-fluid brand-img" src="assets/img/sisley.png"
+                                                    alt="Brand Logo">
                                             </div>
                                         </div>
                                     </div>
                                     <!--End Second slide-->
-
-                                    <!--Third slide-->
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_01.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_02.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_03.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img"
-                                                        src="assets/img/brand_04.png" alt="Brand Logo"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--End Third slide-->
-
                                 </div>
                                 <!--End Slides-->
                             </div>

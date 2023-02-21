@@ -21,7 +21,9 @@
     <script defer src="{{ URL::asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
     <script defer src="{{ URL::asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="{{ URL::asset('assets/js/custom.js') }}"></script>
-    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css') }}"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
@@ -60,92 +62,74 @@
                 <div class="navbar align-self-center d-flex">
                     <div class="dropdown text-decoration-none ">
                         <button
-                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            class="nav-icon position-relative text-decoration-none btn nav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-cart-arrow-down text-secondary mr-1"></i>
-                            <span
-                                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                            @if (Auth::user())
+                                <span
+                                    class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">
+
+                                    {{ count(Auth::user()->cart->products) }}
+                                </span>
+                            @endif
                         </button>
                         {{-- aqui emplieza el dropdown de cart --}}
+
+
                         {{-- aquí crearemos un foreach para recorrer lo que haya en el carrito ---------------------------------------- --}}
                         <ul class="dropdown-menu dropdown-cart" role="menu">
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_1.jpg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 27$</span>
+                            @if (Auth::user())
+                                @foreach (Auth::user()->cart->products as $product)
+                                    <li>
+                                        <span class="item">
+                                            <div class="d-flex">
+                                                <span class="item-left">
+                                                    <img src="/assets/img/{{ $product->id }}/{{ $product->id }}_0.jpg"
+                                                        alt="" style="width: 50px" />
+                                                    <span class="item-info">
+                                                        <span>{{ $product->name }}</span>
+                                                        <span>{{ $product->price }}€</span>
+                                                    </span>
+                                                </span>
+                                                <span class="item-right">
+                                                    <form action="{{ route('cart.eliminar', $product->id) }}"
+                                                        method="POST" class="justify-content-center">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit"
+                                                            class="btn text-white btn-danger btn-sm me-1 mb-2"
+                                                            data-mdb-toggle="tooltip" title="Remove item">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </span>
+                                            </div>
                                         </span>
-                                    </span>
-                                    <span class="item-right">
-
-                                        <button class="btn btn-danger fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
+                                    </li>
+                                @endforeach
+                            @endif
                             {{-- hasta aquí el foreach ------------------------------------------------------------------------------------ --}}
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_2.jpg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 3$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_3.jpeg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 12$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger  fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="item">
-                                    <span class="item-left">
-                                        <img src="http://www.prepbootstrap.com/Content/images/template/menucartdropdown/item_4.jpg"
-                                            alt="" />
-                                        <span class="item-info">
-                                            <span>Item name</span>
-                                            <span>price: 7$</span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-danger  fas fa-trash"></button>
-                                    </span>
-                                </span>
-                            </li>
                             {{-- esto no se borra viene luego del foreach --}}
                             <hr class="my-4" />
                             <li class=" text-center">
-                                <a class="text-dark" href="{{ route('cart.details') }}">Ver carrito</a>
+                                @if (!Auth::user())
+                                    <strong>Para ver el carrito necesitas loguearte </strong> <br>
+                                    <a class="text-dark" href="{{ route('login') }}">({{ __('Login') }})</a>
+                                @else
+                                    <a class="text-dark" href="{{ route('cart.details') }}">Ver carrito</a>
+                                @endif
                             </li>
                         </ul>
                         {{-- aquí termina --}}
                     </div>
                     <div class="dropdown text-decoration-none ">
                         <button
-                            class="nav-icon position-relative text-decoration-none btn bgpropio nav-link fw-bolder text-white dropdown-toggle"
+                            class="nav-icon position-relative text-decoration-none btnnav-link fw-bolder text-white dropdown-toggle"
                             type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-user text-secondary mr-3"></i>
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         </button>
-                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-start" role="menu">
+                        <ul class="dropdown-menu dropdown-cart bgpropio dropdown-menu dropdown-menu-end dropdown-menu-start"
+                            role="menu">
                             @if (!Auth::user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -157,17 +141,19 @@
                                 @endif
                             @else
                                 <div class="dropdown text-center">
-                                    <li class="nav-item"><a class="dropdown-item" href="{{ route('profile') }}">{{ Auth::user()->username }}</a>
+                                    <li class="nav-item"><a class="dropdown-item"
+                                            href="{{ route('profile') }}">{{ Auth::user()->username }}</a>
                                     </li>
-                                    @if (Auth::user()->rol=='admin')
-                                        <li class="nav-item"><a class="dropdown-item" href="{{ route('table') }}">{{ __('Panel admin') }}</a>
+                                    @if (Auth::user()->rol == 'admin')
+                                        <li class="nav-item"><a class="dropdown-item"
+                                                href="{{ route('table') }}">{{ __('Panel admin') }}</a>
                                         </li>
-                                     @endif
+                                    @endif
                                     <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                     </li>
-                                    <form id="logout-form" name="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
+                                    <form id="logout-form" name="logout-form" action="{{ route('logout') }}"
+                                        method="POST" class="d-none">
                                         @csrf
                                         {{ csrf_field() }}
                                     </form>

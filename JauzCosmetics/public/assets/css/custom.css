@@ -2,10 +2,15 @@
     color: rgb(94, 15, 167);
 }
 
-.bgpropio{
-background-color: rgb(45, 10, 78);
+.colorText{
+    text-decoration:rgb(94, 15, 167); ;
 }
-
+.bgpropio{
+    background: rgba(95,2,141,0.75);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(95,2,141,0.375);
+}
 .card{
     border: none;
 }
@@ -82,6 +87,30 @@ background-color: rgb(45, 10, 78);
 .notify{
     margin-top: 150px;
 }
+/* ?Cambio de color de paginate y mod */
+.pagination li {
+    margin-left: .25rem;
+    margin-right: .25rem;
+  }
+
+  .pagination li .page-link {
+    border-radius: .25rem;
+    border: none;
+    min-width: 2.25rem;
+    text-align: center;
+    color: #4f5464;
+  }
+
+  .pagination li.active .page-link,
+  .pagination li .page-link:hover {
+    background-color: rgb(94, 15, 167);
+    color: #fff;
+    font-weight: bold;
+  }
+
+/* span{
+    font-size: 11px;
+} */
 
 /*
 @media (min-width: 768px)
