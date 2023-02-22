@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ImgController;
 use App\Http\Controllers\Imgtroller;
 use App\Http\Controllers\UserController;
@@ -60,6 +61,8 @@ Route::get('/allProducts', [ShopController::class, 'products'])->name('allProduc
 
 Route::get('table', [AdminController::class, 'productos'])->name('table');
 
+Route::get('/profile', [AddressController::class, 'allAddresses'])->name('profile');
+Route::post('crear_direccion/{id?}', [ AddressController::class, 'crear']) -> name('crear_direccion');
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
