@@ -28,8 +28,6 @@ Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ShopController::class, 'detalle'])->name('article.details');
 Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
-// Route::post('/article/{id?}',  [CartController::class, 'precioTotal'])->name('cart.precioTotal');
-// Route::get('/cart', [CartController::class, 'precioTotal'])->name('cart.precioTotal');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -85,6 +83,7 @@ Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->g
 Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
     Route::get('', [CartController::class, 'showCart'])->name('cart.details');
     Route::delete('/eliminar/{id}', [CartController::class, 'eliminar'])->name('cart.eliminar');
-    // Route::post('', [CartController::class, 'addProduct'])->name('cart.addProduct');
+    Route::get('/moreAmount/{id}', [CartController::class, 'moreAmount'])->name('cart.moreAmount');
+    Route::get('/lessAmount/{id}', [CartController::class, 'lessAmount'])->name('cart.lessAmount');
 });
 
