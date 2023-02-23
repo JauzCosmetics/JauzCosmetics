@@ -112,10 +112,10 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-/*         $username = ['adminUser','normalUser','otherUser','juanma','javi','andres'];
-        $email = ['adminUser@gmail.com','normalUser@gmail.com','otherUser@gmail.com','juanma@gmail.com','javi@gmail.com','andres@gmail.com'];
-        $password = ['1234','1234','1234','1234','1234','1234'];
-        $rol = ['admin','user','user','user','user','user'];
+        $username = ['adminUser'];
+        $email = ['adminUser@gmail.com'];
+        $password = ['12345678'];
+        $rol = ['admin'];
 
         $tamañouser = sizeof($username);
 
@@ -127,6 +127,6 @@ class DatabaseSeeder extends Seeder
                 'password' => $password[$i],
                 'rol' => $rol[$i],
             ]);
-        } */
+        }
     }
 }

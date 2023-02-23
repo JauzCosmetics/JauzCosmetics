@@ -91,7 +91,7 @@
     </section>
 @endsection
 
-@section('bestSeller')
+{{-- @section('bestSeller')
     <section class="bg-light">
         <div class="container py-5">
             <div class="row text-center py-3">
@@ -161,4 +161,4 @@
         </div>
     </section>
     <!-- End Featured Product -->
-@endsection
+@endsection --}}
