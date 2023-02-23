@@ -39,7 +39,7 @@
                                         </div>
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="btn bgpropio text-white">
                                                 {{ __('Login') }}
                                             </button>
                                         </div>
