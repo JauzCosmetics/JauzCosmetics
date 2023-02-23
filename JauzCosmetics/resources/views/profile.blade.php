@@ -68,7 +68,7 @@
                             @endif
                             <!-- Modal trigger button -->
                             <div class="d-flex justify-content-center align-items-center w-100 pb-4">
-                               <button type="button" class="btn btn-primary btn-lg w-50 text-center" data-bs-toggle="modal" data-bs-target="#modalId">
+                               <button type="button" class="btn bgpropio btn-lg w-50 text-center text-white" data-bs-toggle="modal" data-bs-target="#modalId">
                               Añade una direccion
                             </button>
                             </div>
