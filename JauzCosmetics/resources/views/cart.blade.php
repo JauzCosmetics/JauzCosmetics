@@ -43,17 +43,18 @@
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <!-- Quantity -->
                                         <div class="d-flex mb-4 mt-5 " style="max-width: 300px">
-                                            <a href="{{route('cart.lessAmount', $product->id)}}">
+                                            <a href="{{ route('cart.lessAmount', $product->id) }}">
                                                 <button class="btn bgpropio px-3 me-2 text-white">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
                                             </a>
 
                                             <div class="form-outline col-4">
-                                                <input id="form1" min="1" name="amount" value="{{ $product->pivot->amount }}"
-                                                    type="number" class="form-control form-control-sm" />
+                                                <input id="form1" min="1" name="amount"
+                                                    value="{{ $product->pivot->amount }}" type="number"
+                                                    class="form-control form-control-sm" />
                                             </div>
-                                            <a href="{{route('cart.moreAmount', $product->id)}}">
+                                            <a href="{{ route('cart.moreAmount', $product->id) }}">
                                                 <button class="btn bgpropio px-3 ms-2 text-white">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
@@ -64,7 +65,7 @@
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
                                             {{-- Obtenemos el precio de la tabla product por la cantidad obtenida en la tabla pivote product_cart --}}
-                                            <strong>{{ ($product->price)*($product->pivot->amount) }}€</strong>
+                                            <strong>{{ $product->price * $product->pivot->amount }}€</strong>
                                         </p>
                                         <!-- Price -->
                                     </div>
@@ -124,12 +125,23 @@
                                 </li>
                             </ul>
                             <div class="text-white ms-4">
-                                <a href="http://" type="button" class="btn bgpropio btn-lg btn-block text-white ms-3">
-                                    Pagar
-                                </a>
-                                <a href="http://" type="button"
+
+                                <form action="{{ route('order.buy') }}" method="POST"
+                                    class="row justify-content-center">
+                                    <input type='number' name="order_id" hidden>
+                                    @method('POST')
+                                    @csrf
+                                    <button class="btn bgpropio text-white text-decoration-none btn-lg"
+                                        type="submit">Añadir al carrito</button>
+                                </form>
+         {{--                        <a href="{{ route('order.buy') }}" type="button" method='POST'
                                     class="btn bgpropio btn-lg btn-block text-white ms-4 text-center ">
                                     Seguir comprando
+                                </a> --}}
+                                <a href="{{ route('order.buy') }}" type="button"
+                                    class="btn bgpropio btn-lg btn-block text-white ms-3">
+                                    Pagar
+
                                 </a>
                             </div>
 
