@@ -117,6 +117,11 @@
                                 </li>
                             </ul>
                             <div class="row pb-3">
+                                <div class="col d-grid">
+                                    <a href="{{ route('allProducts') }}" type="button"
+                                        class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
+                                        value="addcart">Seguir comprando</a>
+                                </div>
                                 <div class="col d-grid mx-3">
 
                                     {{-- comprobamos que esta logueado si NO lo está lo mandamos al login --}}
@@ -135,11 +140,6 @@
                                                 type="submit">Añadir al carrito</button>
                                         </form>
                                     @endif
-                                </div>
-                                <div class="col d-grid">
-                                    <a href="{{ route('allProducts') }}" type="button"
-                                        class="btn bgpropio text-white text-decoration-none btn-lg" name="submit"
-                                        value="addcart">Seguir comprando</a>
                                 </div>
                             </div>
                         </div>
