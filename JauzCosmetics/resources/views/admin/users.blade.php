@@ -54,12 +54,6 @@
                     </table>
 
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <a href="{{ route('admin.crear') }}">
-                            <button class="btn btn-primary" type="submit">Crear</button></h3></a>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- /.container-fluid -->
