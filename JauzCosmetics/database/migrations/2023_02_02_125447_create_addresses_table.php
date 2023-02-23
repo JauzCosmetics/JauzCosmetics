@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('country');
             $table->string('city');
+            $table->integer('CP');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
