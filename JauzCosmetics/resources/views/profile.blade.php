@@ -44,20 +44,28 @@
                             </div>
                             @if ($addresses->count() > 0)
                             <p class="text-center h3  mb-5 mx-1 mx-md-4 mt-4">Tus direcciones</p>
+                            <div class="row pt-1">
+                                <div class="col-6 mb-3">
+                                    <h1>Dirección</h1>
+                                </div>
+                                <div class="col-3 mb-3">
+                                    <h3>Pais</h3>
+                                </div>
+                                <div class="col-3 mb-3">
+                                    <h3>Ciudad</h3>
+                                </div>
+                            </div>
                             <hr class="mt-0 mb-4">
                                 @foreach ($addresses as $a)
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Dirección</h6>
-                                            <p class="text-muted">{{ $a->address }}</p>
+                                            <p class="text">{{ $a->address }}</p>
                                         </div>
                                         <div class="col-3 mb-3">
-                                            <h6>Pais</h6>
-                                            <p class="text-muted">{{ $a->country }}</p>
+                                            <p class="text">{{ $a->country }}</p>
                                         </div>
                                         <div class="col-3 mb-3">
-                                            <h6>Ciudad</h6>
-                                            <p class="text-muted">{{ $a->city }}</p>
+                                            <p class="text">{{ $a->city }}</p>
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-4">
