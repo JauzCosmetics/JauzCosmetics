@@ -16,4 +16,8 @@ class Order extends Model
 
         return $this->hasOne(Cart::class)->withTimestamps();
     }
+    public function products(){
+
+        return $this->belongsToMany(Product::class,'cart_product_order')->withTimestamps();
+    }
 }
