@@ -125,6 +125,7 @@
                                 </li>
                             </ul>
                             <div class="text-white ms-4">
+
                                 <form action="{{ route('order.buy') }}" method="POST"
                                     class="row justify-content-center">
                                     <input type='number' name="order_id" hidden>
@@ -140,6 +141,7 @@
                                 <a href="{{ route('order.buy') }}" type="button"
                                     class="btn bgpropio btn-lg btn-block text-white ms-3">
                                     Pagar
+
                                 </a>
                             </div>
 
