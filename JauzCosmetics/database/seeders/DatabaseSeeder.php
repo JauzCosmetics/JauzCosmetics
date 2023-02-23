@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -112,10 +113,10 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-/*         $username = ['adminUser','normalUser','otherUser','juanma','javi','andres'];
-        $email = ['adminUser@gmail.com','normalUser@gmail.com','otherUser@gmail.com','juanma@gmail.com','javi@gmail.com','andres@gmail.com'];
-        $password = ['1234','1234','1234','1234','1234','1234'];
-        $rol = ['admin','user','user','user','user','user'];
+        $username = ['adminUser'];
+        $email = ['adminUser@gmail.com'];
+        $password = ['12345678'];
+        $rol = ['admin'];
 
         $tamañouser = sizeof($username);
 
@@ -124,9 +125,9 @@ class DatabaseSeeder extends Seeder
             DB::table('users')->insert([
                 'username' => $username[$i],
                 'email' => $email[$i],
-                'password' => $password[$i],
+                'password' => Hash::make($password[$i]),
                 'rol' => $rol[$i],
             ]);
-        } */
+        }
     }
 }

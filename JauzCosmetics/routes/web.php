@@ -54,6 +54,8 @@ Route::get('/index', function () {
 })->middleware('auth');
 
 
+
+
 Route::get('/maquillaje', [ShopController::class, 'maquillaje'])->name('maquillaje');
 Route::get('/accesorio', [ShopController::class, 'accesorio'])->name('accesorio');
 Route::get('/allProducts', [ShopController::class, 'products'])->name('allProducts');
@@ -66,7 +68,8 @@ Route::post('crear_direccion/{id?}', [ AddressController::class, 'crear']) -> na
 /* Agrupamos las rutas que van a ser controladas por las funciones de adminController.
 Con prefix tomará */
 
-Route::prefix('/admin')->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
+Route::prefix('/admin')->middleware(['auth','isAdmin'])->namespace('App\\Http\\Controllers\\AdminController')->group(function () {
+
     Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
 
     Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
