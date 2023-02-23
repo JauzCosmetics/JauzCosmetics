@@ -43,26 +43,28 @@
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <!-- Quantity -->
                                         <div class="d-flex mb-4 mt-5 " style="max-width: 300px">
-                                            <button class="btn bgpropio px-3 me-2 text-white"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
+                                            <a href="{{route('cart.lessAmount', $product->id)}}">
+                                                <button class="btn bgpropio px-3 me-2 text-white">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </a>
 
                                             <div class="form-outline col-4">
-                                                <input id="form1" min="1" name="quantity" value="1"
-                                                    type="number" class="form-control" />
+                                                <input id="form1" min="1" name="amount" value="{{ $product->pivot->amount }}"
+                                                    type="number" class="form-control form-control-sm" />
                                             </div>
-
-                                            <button class="btn bgpropio px-3 ms-2 text-white"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
+                                            <a href="{{route('cart.moreAmount', $product->id)}}">
+                                                <button class="btn bgpropio px-3 ms-2 text-white">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </a>
                                         </div>
                                         <!-- Quantity -->
 
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
-                                            <strong>{{ $product->price }}€</strong>
+                                            {{-- Obtenemos el precio de la tabla product por la cantidad obtenida en la tabla pivote product_cart --}}
+                                            <strong>{{ ($product->price)*($product->pivot->amount) }}€</strong>
                                         </p>
                                         <!-- Price -->
                                     </div>

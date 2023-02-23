@@ -3,10 +3,10 @@
 Para migrar la base de datos y rellenarla de datos: <br>
   php artisan migrate <br>
   php artisan db:seed <br>
-
-Abrir 2 server: <br>
+  
+ Levantar el server en la terminal
   php artisan serve <br>
-  npm run dev
+ 
 
 <!--
 **JauzCosmetics/JauzCosmetics** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

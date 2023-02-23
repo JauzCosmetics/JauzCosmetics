@@ -1,11 +1,12 @@
 @extends('general')
 
 @section('head')
+
     <title>Jauz Cosmetics</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    {{-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/"> --}}
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}">
     @notifyCss
