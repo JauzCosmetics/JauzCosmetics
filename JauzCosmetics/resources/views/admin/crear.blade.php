@@ -3,7 +3,11 @@
 @section('crear')
     <div class="container py-5">
         <div class="row py-5">
+
             <form class="col-md-9 m-auto" action="{{ route('admin.guardar') }}" method="POST" enctype="multipart/form-data">
+                @if (session('mensaje'))
+                <div class="alert alert-success">{{ session('mensaje') }}</div>
+                @endif
                 <h1>Crear un producto</h1>
 
                 @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
@@ -34,9 +38,7 @@
                     </div>
                 @endif
 
-                @if (session('mensaje'))
-                    <div class="alert alert-success">{{ session('mensaje') }}</div>
-                @endif
+
             </form>
         </div>
     </div>

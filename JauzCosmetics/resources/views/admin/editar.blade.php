@@ -2,10 +2,11 @@
 
 @section('editar')
     <div class="container py-5 col-4">
+        @if (session('mensaje'))
+        <div class="alert alert-success">{{ session('mensaje') }}</div>
+        @endif
+        <h2 class="mb-5 text-center">Editando el producto: {{ $product->name }}</h2>
         <div class="row py-5 ">
-            <h2 class="mb-5 text-center">Editando el producto: <br> {{ $product->name }}</h2>
-
-
             <form class="col-md-9 m-auto" action="{{ route('admin.actualizar', $product->id) }}" method="POST">
                 @method('PUT')
                 @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
@@ -33,9 +34,7 @@
                         </ul>
                     </div>
                 @endif
-                @if (session('mensaje'))
-                    <div class="alert alert-success">{{ session('mensaje') }}</div>
-                @endif
+
             </form>
         </div>
     </div>
