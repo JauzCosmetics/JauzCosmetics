@@ -72,6 +72,7 @@ Route::prefix('/admin')->middleware(['auth','isAdmin'])->namespace('App\\Http\\C
     Route::get('', [AdminController::class, 'productos'])->name('admin.productos');
 
     Route::get('/users', [AdminController::class, 'usuarios'])->name('admin.usuarios');
+    Route::get('/orders', [AdminController::class, 'orders'])->name('admin.orders');
 
     Route::get('/crear', [AdminController::class, 'crear'])->name('admin.crear');
     Route::post('/crear', [AdminController::class, 'guardar'])->name('admin.guardar');

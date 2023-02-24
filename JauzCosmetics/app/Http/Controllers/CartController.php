@@ -30,7 +30,7 @@ class CartController extends Controller
         $cart = $user->cart;
         $product = Product::find($request->product_id);
         if (!$cart->products->contains($id)) {
-            
+
             $cart->products()->attach($id,['amount'=>1]);
             return back()->with('success', "$product->nombre ¡se ha agregado con éxito al carrito!");
         }else{
