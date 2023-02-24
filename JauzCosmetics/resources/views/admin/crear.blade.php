@@ -23,7 +23,9 @@
                 <div class="mb-3 ">
                     {{-- <label for="formFileMultiple" class="form-label"></label> --}}
                     <input class="form-control" name="img[]" type="file" id="img" multiple>
+                    <label for="">Seleccione 6 fotos máximo</label>
                 </div>
+
                 <a href="admin">
                     <button class="btn btn-primary btn-block" type="submit">Guardar</button>
                 </a>
