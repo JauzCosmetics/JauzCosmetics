@@ -16,6 +16,7 @@ class AddressController extends Controller
         $addressNueva -> country = $request -> country;
         $addressNueva -> city = $request -> city;
         $addressNueva -> user_id = $request -> id;
+        $addressNueva -> CP = $request -> cp;
         $addressNueva -> save();
 
         return back()->with('success', 'Dirección agregada');

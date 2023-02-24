@@ -44,20 +44,34 @@
                             </div>
                             @if ($addresses->count() > 0)
                             <p class="text-center h3  mb-5 mx-1 mx-md-4 mt-4">Tus direcciones</p>
+                            <div class="row pt-1">
+                                <div class="col-6 mb-3">
+                                    <h1>Dirección</h1>
+                                </div>
+                                <div class="col-2 mb-2">
+                                    <h3>Pais</h3>
+                                </div>
+                                <div class="col-2 mb-2">
+                                    <h3>Ciudad</h3>
+                                </div>
+                                <div class="col-2 mb-2">
+                                    <h3>CP</h3>
+                                </div>
+                            </div>
                             <hr class="mt-0 mb-4">
                                 @foreach ($addresses as $a)
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Dirección</h6>
-                                            <p class="text-muted">{{ $a->address }}</p>
+                                            <p class="text">{{ $a->address }}</p>
                                         </div>
-                                        <div class="col-3 mb-3">
-                                            <h6>Pais</h6>
-                                            <p class="text-muted">{{ $a->country }}</p>
+                                        <div class="col-2 mb-2">
+                                            <p class="text">{{ $a->country }}</p>
                                         </div>
-                                        <div class="col-3 mb-3">
-                                            <h6>Ciudad</h6>
-                                            <p class="text-muted">{{ $a->city }}</p>
+                                        <div class="col-2 mb-2">
+                                            <p class="text">{{ $a->city }}</p>
+                                        </div>
+                                        <div class="col-2 mb-2">
+                                            <p class="text">{{ $a->CP }}</p>
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-4">
@@ -68,7 +82,7 @@
                             @endif
                             <!-- Modal trigger button -->
                             <div class="d-flex justify-content-center align-items-center w-100 pb-4">
-                               <button type="button" class="btn btn-primary btn-lg w-50 text-center" data-bs-toggle="modal" data-bs-target="#modalId">
+                               <button type="button" class="btn bgpropio btn-lg w-50 text-center text-white" data-bs-toggle="modal" data-bs-target="#modalId">
                               Añade una direccion
                             </button>
                             </div>
@@ -330,11 +344,16 @@
                                                                 <option value="YU">Yugoslavia</option>
                                                                 <option value="ZM">Zambia</option>
                                                                 <option value="ZW">Zimbabue</option>
+
                                                             </select>
                                                             <br>
                                                             <label for="city"
                                                                 class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
                                                             <input id="city" type="city" class="form-control" name="city" required>
+                                                            <br>
+                                                            <label for="cp"
+                                                            class="col-md-4 col-form-label text-md-right">{{ __('Código Postal') }}</label>
+                                                        <input id="cp" type="cp" class="form-control" name="cp" required>
                                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 pt-4">
                                                                 <button type="submit" class="btn btn-primary">
                                                                     {{ __('Guardar dirección') }}

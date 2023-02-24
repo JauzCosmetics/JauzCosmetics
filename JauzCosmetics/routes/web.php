@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AddressController;
-use App\Http\Controllers\ImgController;
-use App\Http\Controllers\Imgtroller;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShopController;
 
 /*
@@ -28,6 +26,7 @@ Route::get('/', [ShopController::class, 'productos'])->name('index');
 
 Route::get('/article/{id?}', [ShopController::class, 'detalle'])->name('article.details');
 Route::post('/article/{id?}',  [CartController::class, 'addProduct'])->name('cart.addProduct');
+Route::post('/order/{id?}',  [OrderController::class, 'buy'])->name('order.buy');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -80,7 +79,11 @@ Route::prefix('/admin')->middleware(['auth','isAdmin'])->namespace('App\\Http\\C
     Route::get('/editar/{id}', [AdminController::class, 'editar'])->name('admin.editar');
     Route::put('/editar/{id}', [AdminController::class, 'actualizar'])->name('admin.actualizar');
 
+    Route::get('/editarUser/{id}', [AdminController::class, 'editarUser'])->name('admin.editarUser');
+    Route::put('/editarUser/{id}', [AdminController::class, 'actualizarUser'])->name('admin.actualizarUser');
+
     Route::delete('/eliminar/{id}', [AdminController::class, 'eliminar'])->name('admin.eliminar');
+    Route::delete('/eliminarUser/{id}', [AdminController::class, 'eliminarUser'])->name('admin.eliminarUser');
 });
 
 Route::prefix('/cart')->namespace('App\\Http\\Controllers\\CartController')->group(function () {
