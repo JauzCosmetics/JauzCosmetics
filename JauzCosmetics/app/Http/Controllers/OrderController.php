@@ -17,14 +17,15 @@ class OrderController extends Controller
         $order->pago='Bizum';
         $order->address = 'Calle pitumba';
         $productInCart = Auth::user()->cart->products;
-        $order->save();
+        $order->total = Auth::user()->cart->total;
 
+        $order->save();
         foreach ($productInCart as $product) {
+
             $order->products()->attach($product->id,['amount'=>$product->pivot->amount]);
         }
-        
 
-        $order->total = Auth::user()->cart->total;
+
 
         Auth::user()->cart->products()->detach();
         Auth::user()->cart->total = 0;

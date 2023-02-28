@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('pago',['Credit card', 'Bizum', 'PayPal']);
             $table->string('address');
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->double('total');
             $table->timestamps();
         });
     }

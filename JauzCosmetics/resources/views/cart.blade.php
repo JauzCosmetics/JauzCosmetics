@@ -125,7 +125,7 @@
                             <div class="text-white ms-4">
 
                                 <form action="{{ route('order.buy', $total) }}" method="POST" class="row justify-content-center">
-                                    <input type='number' name="order_id" hidden>
+                                   
                                     @method('POST')
                                     @csrf
                                     <a href="{{ route('allProducts') }}" class="btn bgpropio btn-lg btn-block text-white ms-3 col-4"><strong>Volver</strong></a>
