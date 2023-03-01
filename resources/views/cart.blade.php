@@ -50,9 +50,7 @@
                                             </a>
 
                                             <div class="form-outline col-4">
-                                                <input id="form1" min="1" name="amount"
-                                                    value="{{ $product->pivot->amount }}" type="number"
-                                                    class="form-control form-control-sm" />
+                                                <p id="form1" class="form-control form-control-sm">{{ $product->pivot->amount }}</p>
                                             </div>
                                             <a href="{{ route('cart.moreAmount', $product->id) }}">
                                                 <button class="btn bgpropio px-3 ms-2 text-white">
@@ -126,23 +124,14 @@
                             </ul>
                             <div class="text-white ms-4">
 
-                                <form action="{{ route('order.buy') }}" method="POST"
-                                    class="row justify-content-center">
-                                    <input type='number' name="order_id" hidden>
+                                <form action="{{ route('order.buy', $total) }}" method="POST" class="row justify-content-center">
+                                   
                                     @method('POST')
                                     @csrf
-                                    <button class="btn bgpropio text-white text-decoration-none btn-lg"
-                                        type="submit">Añadir al carrito</button>
+                                    <a href="{{ route('allProducts') }}" class="btn bgpropio btn-lg btn-block text-white ms-3 col-4"><strong>Volver</strong></a>
+                                    <button class="btn bgpropio btn-lg btn-block text-white ms-3 col-4"
+                                        type="submit">Pagar</button>
                                 </form>
-         {{--                        <a href="{{ route('order.buy') }}" type="button" method='POST'
-                                    class="btn bgpropio btn-lg btn-block text-white ms-4 text-center ">
-                                    Seguir comprando
-                                </a> --}}
-                                <a href="{{ route('order.buy') }}" type="button"
-                                    class="btn bgpropio btn-lg btn-block text-white ms-3">
-                                    Pagar
-
-                                </a>
                             </div>
 
                         </div>

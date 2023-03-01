@@ -32,4 +32,8 @@ class Product extends Model
     public function imgProducts(){
         return $this->hasOne(ImgProduct::class);
     }
+
+    public function orders(){
+        return $this->belongsToMany(Order::class,'cart_product_order')->withTimestamps();
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ImgProduct;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,11 @@ class AdminController extends Controller
     {
         $users = User::all(); // Nos saca todos los productos de la BBDD
         return view('admin.users', @compact('users')); //Compact nos recoge todo los elementos que encontremos en la base de datos
+    }
+    public function orders()
+    {
+        $orders = Order::all(); // Nos saca todos los productos de la BBDD
+        return view('admin.orders', @compact('orders')); //Compact nos recoge todo los elementos que encontremos en la base de datos
     }
 
     public function crear()

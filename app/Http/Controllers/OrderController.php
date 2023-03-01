@@ -10,19 +10,22 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function buy(){
+    public function buy($total){
         $order = new Order;
         $order->user_id = User::find(Auth::id())->id;
-        $order->total_price=88750;
+        $order->total_price=$total;
         $order->pago='Bizum';
         $order->address = 'Calle pitumba';
-        $order->save();
+        $productInCart = Auth::user()->cart->products;
+        $order->total = Auth::user()->cart->total;
 
-        foreach (Auth::user()->cart->products as $product) {
+        $order->save();
+        foreach ($productInCart as $product) {
+
             $order->products()->attach($product->id,['amount'=>$product->pivot->amount]);
         }
 
-        $order->total = Auth::user()->cart->total;
+
 
         Auth::user()->cart->products()->detach();
         Auth::user()->cart->total = 0;
