@@ -3,10 +3,6 @@ FROM php:8.0-apache
 
 RUN apt-get update && apt-get install -y git
 
-WORKDIR /var/www/html/
-
-RUN git clone https://github.com/juanma0089/examenPHP.git
-
 # Install required PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql
 
