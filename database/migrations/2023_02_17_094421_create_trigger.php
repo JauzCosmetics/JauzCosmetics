@@ -14,10 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::unprepared('CREATE TRIGGER add_cart AFTER INSERT ON `USERS` FOR EACH ROW
+        DB::unprepared(DB::raw("CREATE TRIGGER add_cart AFTER INSERT ON `USERS` FOR EACH ROW
         BEGIN
             INSERT INTO `carts` SET user_id = NEW.id, created_at = NEW.created_at, updated_at = NEW.updated_at;
-        END');
+        END"));
     }
 
     /**
