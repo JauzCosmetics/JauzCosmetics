@@ -355,7 +355,7 @@
                                                             class="col-md-4 col-form-label text-md-right">{{ __('Código Postal') }}</label>
                                                         <input id="cp" type="cp" class="form-control" name="cp" required>
                                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 pt-4">
-                                                                <button type="submit" class="btn btn-primary">
+                                                                <button type="submit" class="btn bgpropio text-white">
                                                                     {{ __('Guardar dirección') }}
                                                                 </button>
                                                             </div>
